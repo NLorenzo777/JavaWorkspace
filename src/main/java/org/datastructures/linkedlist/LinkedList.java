@@ -73,6 +73,7 @@ public class LinkedList {
             output.append(currentNode.getData()).append(" ");
             currentNode = currentNode.getNext();
         }
+
         output.append("<tail>");
         System.out.println(output);
         return output.toString();
