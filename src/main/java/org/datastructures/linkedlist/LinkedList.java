@@ -53,19 +53,18 @@ public class LinkedList {
      * If there is a head, remove it by setting the list's head equal to the original head's next node.
      * 2. Return the original head.
      */
-    public String removeHead() {
+    public void removeHead() {
         Node removedHead = this.head;
 
         if (removedHead == null) {
-            return null;
+            return;
         }
         this.head = removedHead.getNext();
-        return removedHead.getData();
     }
 
     //PRINTING THE LIST: The .printList() method is going to create a String that holds the data from every node
     // in the list starting from the "head" and iterate through the list.
-    public String printList() {
+    public void printList() {
         StringBuilder output = new StringBuilder("<head> ");
         Node currentNode = this.head;
 
@@ -76,6 +75,5 @@ public class LinkedList {
 
         output.append("<tail>");
         System.out.println(output);
-        return output.toString();
     }
 }
