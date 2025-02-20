@@ -42,25 +42,45 @@ public class HashMap {
     }
 
     /**
-     * LINKEDLIST and NODE data structures are customized to cater the Key-Value pair.
-     * @param key
-     * @param value
+     * LINKED LIST and NODE data structures are customized to cater the Key-Value pair. <br/>
+     * 1. Check if the head of the list is null. If it is null, this means that the list is empty. <br />
+     * 2. If the list is not null, iterate through the list and check if there is an existing key. <br />
+     * 3.
+     *
      */
-
     public void assign(String key, String value) {
         int arrayIndex = this.hash(key);
         LinkedList list = this.hashmap[arrayIndex];
 
         if (list.head == null) {
             list.addToHead(key, value);
+            return;
+        }
+
+        Node currentNode = list.head;
+
+
+        while (currentNode != null) {
+            if (currentNode.getKey().equals(key)) {
+                currentNode.setKeyValue(key, value);
+            }
+            if (currentNode.getNext() == null) {
+                list.addToTail(key, value);
+            }
+            currentNode = currentNode.getNext();
         }
     }
 
-    //TODO: Continue learning...
     public String retrieve(String key) {
-        int arrayIndex = this.hash(key);
-        return "";
+        Node currentNode = this.hashmap[this.hash(key)].head;
+
+        while (currentNode != null) {
+            if (currentNode.getKey().equals(key)) {
+                return currentNode.getValue();
+            }
+            currentNode = currentNode.getNext();
+        }
+
+        return null;
     }
-
-
 }
