@@ -26,5 +26,8 @@ public class Main {
         // Print the tree again
         tree.printTree();
 
+
+        int[] result = new int[2];
+        result = new int[] {1, 2};
     }
 }
