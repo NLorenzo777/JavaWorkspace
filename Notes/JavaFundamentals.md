@@ -2,7 +2,11 @@
 - [I. Java I/O](#input-and-output-in-java)
   - [Scanner Class](#the-scanner-class)
   - [FileReader and FileWriter Class](#filereader-and-filewriter-class)
-- [II. Serialization](#serialization-in-java)
+- [II. Serialization](#serialization-in-java-)
+  - [Serializable Interface](#the-serializable-interface-)
+  - [Serializable Fields](#serializable-fields-)
+  - [Serializing Reference Types](#serializing-associated-reference-type-fields-)
+  - [Custom Serialization](#custom-serialization-)
 
 ## Input and Output in Java
 
@@ -140,7 +144,9 @@ output.write(statement, 0, 5);
 - This can be done manually by adding `reader.close()` in the end or automatically using 
   `try-with-resources`.
 
-## Serialization in Java
+
+
+## Serialization in Java [↑](#java-fundamentals-and-best-practices)
 One of the benefits of using objects is the ability to encapsulate state (or data) to use within 
 a program.
 
@@ -170,7 +176,7 @@ a program.
 
 ---
 
-### The Serializable Interface
+### The Serializable Interface [↑](#java-fundamentals-and-best-practices)
 - An interface describes the behavior a class.
 - By having a class implement `Serializable` it can be serialized by the Java Virtual Machine (JVM).
 - `Serializable` is a **market interface**. A marker interface provides run time information to 
@@ -190,6 +196,54 @@ public class Person implements Serializable {
 ```
 The `serialVersionUID` acts as an identified for the JVM to choose the proper class to convert a 
 stream of bytes back into an object.
+
+### Serializable Fields [↑](#java-fundamentals-and-best-practices)
+- JVM defines a default way of serializing objects. This default **includes ignoring static class 
+  fields** which belong to a class and not an object.
+- JVM also serializes all fields in an object, even those marked `private` and `final`.
+- A field marked as `transient` will have its value ignored during serialization and instead 
+  receive the default value for that type of field.
+- A static field belongs to the class and not to the object.
+
+### Serializing Associated (Reference Type) Fields [↑](#java-fundamentals-and-best-practices)
+- For reference types to be serializable, they must also implement the `Serializable` interface.
+- If a reference type does not implement serializable, a `NotSerializableException` is thrown.
+- When JVM encounters a reference type, it will serialize the reference type first before trying 
+  to serialize the encapsulating object.
+
+### Custom Serialization [↑](#java-fundamentals-and-best-practices)
+```java
+public class DateOfBirth {
+  private int month;
+  private int day;
+  private int year;
+
+  // constructors and getters
+}
+
+public class Person implements Serializable {
+  private String name;
+  private DateOfBirth dateOfBirth;
+
+  private void writeObject(java.io.ObjectOutputStream stream) throws IOException{
+    stream.writeObject(this.name);
+    stream.writeInt(this.dateOfBirth.getMonth());
+    stream.writeInt(this.dateOfBirth.getDay());
+    stream.writeInt(this.dateOfBirth.getYear());
+  }
+
+  private void readObject(java.io.ObjectInputStream stream) throws IOException, ClassNotFoundException{
+    this.name = (String) stream.readObject();
+    int month = (int) stream.readInt();
+    int day = (int) stream.readInt();
+    int year = (int) stream.readInt();
+    this.dateOfBirth = new DateOfBirth(month, day, year);
+  } 
+}
+```
+
+
+
 
 ### Methods
 Below are the following methods used in conducting serialization and deserialization.
@@ -237,12 +291,4 @@ ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 ```java
 Person michaelCopy = (Person) objectInputStream.readObject();
 ```
-
-| Method                                        | Description                                                                                                                                                                                                     | Example                                                                                             |
-|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `FileOutputStream(String filePath)`           | - Constructor method for `FileOutputStream` class.<br>- Helper method to write serialized object to a file.<br>- Establish a stream that points towards a certain file.                                         | ```java<br>FileOutputStream fileOutputStream = new FileOutputStream("fileName.txt");<br>```         |
-| `ObjectOutputStream(FileOutputStream stream)` | - Constructor method for `ObjectOutputStream` class.<br>- Helper method to write serializable object to an output stream.<br>- `writeObject(Obj obj)`: serializes a passed object to a specified output stream. | ```java<br>ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);<br>``` |
-| `FileInputStream(String filePath)`            | - A constructor method for the `FileInputStream` class.<br>- Helper method used to read a file and loads it in a stream.                                                                                        | ```java<br>FileInputStream fileInputStream = new FileInputStream("filename.txt");<br>```            |
-| `ObjectInputStream(fileInputStream stream)`   | - Constructor method for the ObjectInputStream class.<br>- Helps read a stream containing the serialized object in bytes.                                                                                       | ```java<br>ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);<br>```     |
-| `.readObject()`                               | - Translate an ObjectInputStream instance to an object.<br>- `returns:` An Object that needs to be cast.                                                                                                        | ```java<br>Person michaelCopy = (Person) objectInputStream.readObject();<br>```                     |
 
