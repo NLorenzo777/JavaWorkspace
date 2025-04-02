@@ -7,6 +7,11 @@
   - [Serializable Fields](#serializable-fields-)
   - [Serializing Reference Types](#serializing-associated-reference-type-fields-)
   - [Custom Serialization](#custom-serialization-)
+- [III. Generics](#Generics-)
+  - [Generic Interfaces](#generic-interfaces-)
+  - [Generic Methods](#generic-methods-)
+  - [Raw Types](#raw-types-)
+  - [Multiple Type Parameters](#multiple-type-parameters-)
 
 ## Input and Output in Java
 
@@ -234,9 +239,9 @@ public class Person implements Serializable {
 
   private void readObject(java.io.ObjectInputStream stream) throws IOException, ClassNotFoundException{
     this.name = (String) stream.readObject();
-    int month = (int) stream.readInt();
-    int day = (int) stream.readInt();
-    int year = (int) stream.readInt();
+    int month = stream.readInt();
+    int day = stream.readInt();
+    int year = stream.readInt();
     this.dateOfBirth = new DateOfBirth(month, day, year);
   } 
 }
@@ -292,3 +297,154 @@ ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 Person michaelCopy = (Person) objectInputStream.readObject();
 ```
 
+## Generics [↑](#java-fundamentals-and-best-practices)
+- Allows the creation of generic classes and methods by specifying a _type parameter_.
+
+```java
+public class Box<T> {
+    private T data;
+    
+    //Constructor
+    public Box(T data) {
+        this.data = data;
+    }
+    
+    //Getter
+    public T getData() {
+        return this.data;
+    }
+    
+}
+```
+A simple generic `Box` class with a type parameter `T`. All class methods perform under this 
+class performs around the `T`-type parameter.
+
+```java
+Box<String> myStringBox = new Box<>("Apple");
+Box<Integer> myIntBox = new Box<>(3);
+```
+
+#### Good to know and Best practices
+- Type parameter must be specified within the diamond operator `<>` after the `class` name.
+- The type parameter `T`, is similar to a method parameter but instead receives a class or 
+  interface type as an argument as opposed to a reference or primitive type.
+- When defining a type parameter, it is best practice to make them single, uppercase letters to 
+  be easily distinguished. By convention,
+  - `E` : Elements
+  - `K`: Key
+  - `N`: Number
+  - `T`: Type
+  - `V`: Value
+  - `S, U, V`: For multiple types
+- Before Java7, the constructor for generic references are like `Box<String> myStringBox = new 
+Box<String>("Apple");`
+- Generic does not accept primitive types (int, short, long, byte, float, double, boolean, etc.).
+  Therefore, a _Wrapper Class_ should be used instead.
+- Avoid raw types implementation to avoid "incompatible type" errors.
+
+#### Autoboxing
+- Allows wrapper classes to take primitive values and convert them to their corresponding 
+  wrapper object by automatically calling the `valueOf()` method.
+- The value can also be converted back to its primitive type using `integerWrapper.intValue()`;
+
+### Generic Interfaces [↑](#java-fundamentals-and-best-practices)
+
+```java
+public interface Replacer<T>{
+    void replace(T data);
+}
+```
+
+- A generic interface is created like a generic class where the type parameter must be appended 
+  to the interface name.
+- Interface methods declaration are similar to non-generic interfaces and can include 
+  non-generic methods as well.
+
+#### Generic Classes implementing an Interface
+```java
+public class Box <T> implements Replacer<T> {
+    private T data;
+    
+    @Override
+    void replace(T data) {
+        this.data = data;
+    }
+}
+```
+
+The code below shows the generic class that implements a generic interface is constructed.
+
+```java
+Replacer<Integer> boxReplacer = new Box<>();
+```
+
+#### Non-Generic Classes implementing an Interface
+```java
+public class StringBag implements Replacer<T> {
+    private String data;
+    
+    @Override
+    void replace(String data) {
+        this.data = data;
+    }
+}
+```
+
+The code below shows how the non-generic class that implements a generic interface is constructed.
+```java
+Replacer<String> bagReplacer = new StringBag();
+```
+
+### Generic Methods [↑](#java-fundamentals-and-best-practices)
+- It is also possible to make a generic method instead of the whole class being generic.
+- In creating a generic method, it is important to note that the generic type should be 
+  indicated before the return type.
+
+```java
+public class StringBox {
+  private String data;
+
+  public /*static*/ <T> boolean isString(T item) {
+    return item instanceof String; 
+  }
+  
+  public static void main(String[] args) {
+      StringBox box = new StringBox("test");
+      box.isString(5); //returns false
+  }
+}
+```
+- The `isString()` method accepts a parameter of any type (T-type).
+- The same format can also be done for static methods.
+
+### Raw Types [↑](#java-fundamentals-and-best-practices)]
+- Below is an example of a class being instantiated as a raw type.
+
+```java
+public class Box <T> {
+  private T data;
+
+  public Box(T data) {
+    this.data = data; 
+  }
+
+  public T getData() {
+    return this.data;
+  }  
+}
+
+public static void main(String[] args) {
+  Box box = new Box<>("My String");  // Raw type box
+  String s2 = (String) box.getData();  // No incompatible type error
+  String s1 = box.getData();  // Incompatible type error
+}
+```
+
+- This implementation should be avoided due to the following reasons:
+  - Avoid incompatible type errors.
+  - Avoid potential runtime `ClassCastException` error when type-casting explicitly.
+  - Generics give compile-time type checking, which helps detect bugs before code runs.
+  - Generics helps when the JVM applies type erasures. 
+
+
+### Multiple Type Parameters [↑](#java-fundamentals-and-best-practices)]
