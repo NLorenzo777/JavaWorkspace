@@ -12,6 +12,10 @@
   - [Generic Methods](#generic-methods-)
   - [Raw Types](#raw-types-)
   - [Multiple Type Parameters](#multiple-type-parameters-)
+  - [Upper Bounds](#upper-bounds-)
+  - [Wildcards](#wildcards-)
+  - [Lower Bounds for Wildcards](#wildcard-lower-bounds)
+- [IV. Collections](#collections-)
 
 ## Input and Output in Java
 
@@ -448,3 +452,116 @@ public static void main(String[] args) {
 
 
 ### Multiple Type Parameters [↑](#java-fundamentals-and-best-practices)]
+```java
+public class Box <T, S> {
+  private T item1;
+  private S item2;
+  // Constructors, getters, and setters
+}
+Box<String, Integer> wordAndIntegerBox = new Box<>("Hello", 5);
+```
+
+#### Interfaces and Methods
+Multiple type parameters can also be done on interfaces and methods.
+```java
+public class Util {
+    public static <T, S> boolean areNumbers(T item1, S item2) {
+        return item1 instanceof Number && item2 instanceof Number;
+    }
+}
+```
+
+### Upper Bounds [↑](#java-fundamentals-and-best-practices)]
+- When there is a need to restrict what class or interface could be used as a type argument.
+- Restricts a generic type to be a specific type or any type that `extends` it.
+
+```java
+public class Box <T extends Number> {
+    private T data;
+}
+```
+A type parameter `T` was defined and added an upper bound type `Number` for `T`.
+
+This means that `T` can be a `Number` or any of its subclasses (or interfaces).
+
+
+#### Upper Bounds on Generic Methods
+```java
+public static <T extends Number> boolean isZero(T data) {
+    return data.equals(0);
+}
+```
+
+#### Multiple Bounded Parameter
+It is also allowed to have multiple bounds implemented.
+
+```java
+public class Box <T extends Number & Comparable<T>> {
+    private T data;
+}
+```
+- A multiple bounds was imposed on `T` type parameter using the `&` operator.
+- It is important to note that when defining multiple bounds, any upper bound that is a `class` 
+  must come first followed by any interfaces.
+
+
+### Wildcards [↑](#java-fundamentals-and-best-practices)]
+- denoted by `?` symbol represents an unknown type.
+- Makes the structure even more general and used when there is no need for a strict type checking.
+
+```java
+public class Util {
+    
+    public static void printBag(Bag<?> bag) {
+        System.out.println(bag.toString());
+    }
+    
+    public static void main(String[] args) {
+        Bag<String> myBag1 = new Bag("Hello");
+        Bag<Integer> myBag1 =  new Bag(23);
+        Util.printBag(myBag1); // Hello
+        Util.printBag(myBag2); // 23
+    }
+}
+```
+
+Wildcards can also have own upper and lower bounds.
+
+```java
+public static void printBag(Bag<? extends Number> bag) {
+    System.out.println(bag.toString());
+}
+```
+
+### Wildcard Lower Bounds
+- Lower bound can also be had when working with wildcards.
+- Restricts a wildcard to a class or interface **and any of its parent types**.
+
+```java
+public class util {
+    public static getBag(Bag<? super Integer> bag) {
+        return bag;
+    }
+} 
+```
+The type parameters allowed for this case is `Integer`, `Number`, or `Object`. 
+
+When a `Boolean` type is used, this will result in an error.
+
+#### Important Notes:
+- Lower bounds can only be used for wildcards.
+- A wildcard cannot have both upper and lower bounds.
+
+
+#### Summary
+- An upper bound wildcard should be used when the variable is being used to serve some type of 
+  data to the code.
+- A lower bound wildcard should be used when the variable is receiving data and holdting it for 
+  later use.
+- When a variable that serves data is used and only uses `Object` methods, an unbounded wildcard 
+  is preferred.
+- When a variable needs to serve data and store data for later use, use a type parameter instead 
+  of a wildcard.
+
+
+## Collections [↑](#java-fundamentals-and-best-practices)]
