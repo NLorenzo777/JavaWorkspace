@@ -565,3 +565,125 @@ When a `Boolean` type is used, this will result in an error.
 
 
 ## Collections [↑](#java-fundamentals-and-best-practices)]
+Collections Framework helps overcome the limits of an array and provide more complex functionality.
+
+The collection framework provides data structures and algorithms, which perform common tasks on 
+collections. This allows to focus on the important parts of the program and not on the low-level 
+implementation details.
+
+<div align="center">
+<img src="../img/collections.png/" alt="Java Collections" height="75%" width="75%"/>
+</div>
+
+The following are the **Core Interfaces** of the Collections Framework.
+
+### 1. List Interface
+- In a `List`, elements are ordered in sequence. Allows the existence of duplicate elements and 
+  fine-grain control over where elements are inserted in the sequence.
+- Elements are index-based and has dynamic sizing.
+
+#### Implementations
+1. `ArrayList`: Overall preferred implementation since it is a dynamic array.
+2. `LinkedList`: Performs better for cases where start and end changes happens frequently.
+
+```java
+List<Integer> intList = new ArrayList<>();
+```
+In this code snippet, the ArrayList implements the List.
+
+#### Methods
+- `.get(int index)`: retrieves an element based on the index.
+- `indexOf(T element)`: Get the index where the element is located. Returns `-1` if non-existent.
+- `.add(T element)`: Add an element to the list after the last element inside the list.
+- `.add(int index, T element)`: Add an element to the list at a specified index.
+
+### 2. Set Interface
+- A `Set` is a collection of unique elements and all of its methods ensure this stays true.
+
+#### Implementations
+1. `HashSet`: Best performance when retrieving or inserting elements but cannot guarantee any 
+   ordering among them.
+2. `TreeSet`: Does not perform well on insertion and deletion of elements but does keep the 
+   elements stored in order based on their values (this can be customized).
+3. `LinkesHashSet`: Slightly slower performance on insertion and deletion of elements than a 
+   _HashSet_ but keeps elements in insertion order.
+
+#### Methods
+- `.add(T element)`:
+  - Adds an element to the set. If there is an existing element in the Set, there 
+  is no guaranteed ordering.
+  - Returns a `true` if the element was successfully added, `false` if not.
+  - Will return `false` if the element is already existing.
+- `.contains(T element)`: Will return `true` if the element is already existing.
+
+### 3. Queue Interface
+- `Queue` implements and behaves like the Queue data structure.
+
+#### Implementations
+1. `LinkedList`
+2. `PriorityQueue`: Ensures the top element is the smallest relative to the data type's natural 
+   ordering. (or some custom ordering policy provided)
+
+```java
+Queue<String> stringQueue = new LinkedList<>();
+```
+
+#### Methods
+**Methods that throws an exception** (for dynamic sized queueing)
+- `.add()`: Throws exception when there is no space for the element.
+- `.remove()`: Throws exception when there are no elements to remove. Returns the element.
+- `.element()`: Throws exception when there are no elements to get.
+
+**Methods that return a special value** (for static sized queueing)
+- `.offer()`: Returns `false` when there is no space for the element.
+- `.poll()`: Returns `null` when there are no elements to remove.
+- `.peek()`: Returns `null` when there ar eno elements to get.
+
+### 4. Dequeue Interface
+- A type of `queue` that allows the access of elements from the front and back of the queue. 
+  ("double-ended queue")
+
+#### Implementations
+1. `LinkedList`
+2. `ArrayDeque`: Preferred implementation when needing to manipulate elements at the front and back.
+
+#### Methods
+**Methods that throws an exception**
+- `.addFirst()` and `.addLast()`: Throws exception when there is no space to add the element.
+- `.removeFirst()` and `.removeLast()`: Throws exception when there is no element to remove.
+- `.getFirst()` and `.getLast()`: Throws exception when there is no element to get.
+
+**Methods that return a special value**
+- `.offerFirst()` and `.offerLast()`: 
+  - Adds an element.
+  - Returns `false` when there is no space to 
+    add an element.
+- `.pollFirst()` and `.pollLast()`: 
+  - Removes an element. 
+  - Returns `null` when there is no element to remove.
+- `.peekFirtst()` and `.peekLast()`: 
+  - Checks the next value but does not remove them.
+  - Returns `null` when there is no element to get.
+
+### 5. Iterator Interface
+Iterate through a collection (deque) from front to back.
+```java
+class collectionsDemo {
+  public static void main(String[] args) {
+    // Assuming `stringDeque` has elements front -> "Mike", "Jack", "John" <- back
+
+    Deque<String> stringDeque = new ArrayDeque<>();
+    stringDeque.addLast("Mike");
+    stringDeque.addLast("Jack");
+    stringDeque.addLast("John");
+
+    Iterator<String> iterator = stringDeque.descendingIterator();
+
+    while(iterator.hasNext()) {
+      System.out.println(iterator.next());
+    }
+    // OUTPUT TERMINAL:  "John", "Jack", "Mike"
+  }  
+}
+
+```
