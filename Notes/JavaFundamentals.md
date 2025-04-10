@@ -16,6 +16,13 @@
   - [Wildcards](#wildcards-)
   - [Lower Bounds for Wildcards](#wildcard-lower-bounds)
 - [IV. Collections](#collections-)
+  - [`List` Core Interface](#1-list-interface-)
+  - [`Set` Core Interface](#2-set-interface-)
+  - [`Queue` Core Interface](#3-queue-interface-)
+  - [`Dequeue` Core Interface](#4-dequeue-interface-)
+  - [`Iterator` Interface](#5-iterator-interface-)
+  - [`Collections` Interface](#6-collection-interface-)
+  - [`Map` Interface](#7-map-interface-)
 
 ## Input and Output in Java
 
@@ -564,7 +571,7 @@ When a `Boolean` type is used, this will result in an error.
   of a wildcard.
 
 
-## Collections [↑](#java-fundamentals-and-best-practices)]
+## Collections [↑](#java-fundamentals-and-best-practices)
 Collections Framework helps overcome the limits of an array and provide more complex functionality.
 
 The collection framework provides data structures and algorithms, which perform common tasks on 
@@ -577,7 +584,7 @@ implementation details.
 
 The following are the **Core Interfaces** of the Collections Framework.
 
-### 1. List Interface
+### 1. List Interface [↑](#java-fundamentals-and-best-practices)
 - In a `List`, elements are ordered in sequence. Allows the existence of duplicate elements and 
   fine-grain control over where elements are inserted in the sequence.
 - Elements are index-based and has dynamic sizing.
@@ -597,15 +604,17 @@ In this code snippet, the ArrayList implements the List.
 - `.add(T element)`: Add an element to the list after the last element inside the list.
 - `.add(int index, T element)`: Add an element to the list at a specified index.
 
-### 2. Set Interface
-- A `Set` is a collection of unique elements and all of its methods ensure this stays true.
+---
+
+### 2. Set Interface [↑](#java-fundamentals-and-best-practices)
+- A `Set` is a **collection of unique elements** and all of its methods ensure this stays true.
 
 #### Implementations
 1. `HashSet`: Best performance when retrieving or inserting elements but cannot guarantee any 
    ordering among them.
 2. `TreeSet`: Does not perform well on insertion and deletion of elements but does keep the 
    elements stored in order based on their values (this can be customized).
-3. `LinkesHashSet`: Slightly slower performance on insertion and deletion of elements than a 
+3. `LinkedHashSet`: Slightly slower performance on insertion and deletion of elements than a 
    _HashSet_ but keeps elements in insertion order.
 
 #### Methods
@@ -616,7 +625,9 @@ In this code snippet, the ArrayList implements the List.
   - Will return `false` if the element is already existing.
 - `.contains(T element)`: Will return `true` if the element is already existing.
 
-### 3. Queue Interface
+---
+
+### 3. Queue Interface [↑](#java-fundamentals-and-best-practices)
 - `Queue` implements and behaves like the Queue data structure.
 
 #### Implementations
@@ -639,8 +650,10 @@ Queue<String> stringQueue = new LinkedList<>();
 - `.poll()`: Returns `null` when there are no elements to remove.
 - `.peek()`: Returns `null` when there ar eno elements to get.
 
-### 4. Dequeue Interface
-- A type of `queue` that allows the access of elements from the front and back of the queue. 
+---
+
+### 4. Dequeue Interface [↑](#java-fundamentals-and-best-practices)
+- A type of `queue` that allows the access of elements from the **front and back** of the queue. 
   ("double-ended queue")
 
 #### Implementations
@@ -665,7 +678,9 @@ Queue<String> stringQueue = new LinkedList<>();
   - Checks the next value but does not remove them.
   - Returns `null` when there is no element to get.
 
-### 5. Iterator Interface
+---
+
+### 5. Iterator Interface [↑](#java-fundamentals-and-best-practices)
 Iterate through a collection (deque) from front to back.
 ```java
 class collectionsDemo {
@@ -685,5 +700,85 @@ class collectionsDemo {
     // OUTPUT TERMINAL:  "John", "Jack", "Mike"
   }  
 }
-
 ```
+---
+
+### 6. Collection Interface [↑](#java-fundamentals-and-best-practices)
+- The interface that keeps the Collections Framework polymorphic (compatible).
+- The `Collection` interface provides a generic, general-purpose API **when a program needs a 
+collection of elements** and **does not care about what type of collection it is**.
+- Throws `UnsupportOperationException` when a `Collection` method is not implemented correctly.
+- The parent of all the core interfaces.
+
+#### Methods
+- `.addAll(Collection collection)`: Adds all the element of a passed Collection argument.
+- `.isEmpty()`: Returns `true` if the collection is empty.
+- `.iterator()`: Returns an `Iterator` over the collection.
+- `.size()`: returns the number of elements in the collection.
+- `.stream()`: returns a `Stream` over the elements in the collection.
+- `.toArray()`: returns an array with all elements in the collection.
+
+#### Static Methods (Utility Methods)
+- `.binarySearch()`: Performs a binary search over a `List` to find the specified object and 
+returns the index if found. This method is also overloaded to also accept a `Comparator` to 
+define a custom ordering policy. **Remember: The list must be sorted when performing a binary 
+search**
+- `.max()`: Returns the maximum element in the `Collection`. Accepts a `Comparator` (optional).
+- `.min()`: Returns the minimum element in the `Collection`. Accepts a `Comparator` (optional).
+- `.reverse()`: Reverses the order of elements in the `List` passed in as an argument.
+- `.sort()`: Sorts the `List` passed in as an argument. Accepts a `Comparator` to define a 
+  custom ordering policy.
+
+---
+
+### 7. Map Interface [↑](#java-fundamentals-and-best-practices)
+- A generic interface for an object that holds key-value pairs as elements.
+- A _Key_ must be unique and maps only to one _Value_.
+- Is not an extension of the Collection interface.
+
+#### Implementations
+1. `HashMap`: Defines no specific ordering for the keys and is the most optimized implementation 
+   for retrieving values. **Fact: This is Java's implementation of a hash table.**
+
+```java
+Map<String, String> myMap = new HashMap<>();
+```
+
+#### Methods
+- `.put(T key, S value)`: Sets the value that a key maps to. If the key is existing, it replaces 
+  the current value with the new one.
+- `.get(T key)`: Gets the value associated with the key. This does not remove the key-value pair.
+  Returns `null` if the key is not in the `Map`.
+
+---
+### Aggregate Operations
+- Methods that apply transformations to a `Stream` of data.
+- Usage of `Stream` to iterate through a `Collection` instead of using a for-loop and defining a 
+  filter using manual IF conditions.
+
+A `Stream` is a sequence of elements created from a `Collectionc` source. The `Stream` can be 
+used as an input to a _pipeline (set of aggregate functions)_.
+
+#### Pipeline Flow
+1. **Aggregate Operations**: Transform an input `Stream` of byte.
+2. **Intermediate Operations**: Accepts the output of Aggregate Operations as an input.
+3. **Terminal Operation**: The final operation in the pipeline that produces a non-`Stream` output.
+
+```java
+List<Integer> evenList = intList.stream()
+        .filter((number) -> number % 2 == 0)
+        .map(evenNum -> evenNum*2)
+        .collect(Collectors.toList());
+```
+- `.stream()` returns a sequential `Stream` with elements from the `intList`.
+- `.filter()` is the _intermediate operation_.
+- `.filter()` returns a `Stream` with elements that pass some filter condition.
+- `.map()` returns a new `Stream` with elements that have had some method applied to them.
+- `.map()` Transforms a `Stream` of elements by applying a method (lambda parameter) to all 
+  elements in the stream. This will output a new `Stream` where the certain method was applied.
+- `.collect()` is the _terminal operation_ which takes the `Stream` and collects the elements 
+  back into some Container in its parameter.
+- Java provides the `Collectors` class with `static` utility methods to use as an argument to 
+  the `.collect()` method.
+
+
