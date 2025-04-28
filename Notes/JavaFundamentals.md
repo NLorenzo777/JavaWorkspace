@@ -23,6 +23,7 @@
   - [`Iterator` Interface](#5-iterator-interface-)
   - [`Collections` Interface](#6-collection-interface-)
   - [`Map` Interface](#7-map-interface-)
+  - [Aggregate Operations](#aggregate-operations-)
 
 ## Input and Output in Java
 
@@ -751,7 +752,7 @@ Map<String, String> myMap = new HashMap<>();
   Returns `null` if the key is not in the `Map`.
 
 ---
-### Aggregate Operations
+### Aggregate Operations [↑](#java-fundamentals-and-best-practices)
 - Methods that apply transformations to a `Stream` of data.
 - Usage of `Stream` to iterate through a `Collection` instead of using a for-loop and defining a 
   filter using manual IF conditions.
