@@ -1,5 +1,5 @@
-# Java Fundamentals and Best Practices
-- [I. Java I/O](#input-and-output-in-java)
+# Java Fundamentals and Best Practices [↑](../README.md)
+- [I. Java I/O](#input-and-output-in-java-)
   - [Scanner Class](#the-scanner-class)
   - [FileReader and FileWriter Class](#filereader-and-filewriter-class)
 - [II. Serialization](#serialization-in-java-)
@@ -25,7 +25,7 @@
   - [`Map` Interface](#7-map-interface-)
   - [Aggregate Operations](#aggregate-operations-)
 
-## Input and Output in Java
+## Input and Output in Java [↑](#java-fundamentals-and-best-practices-)
 
 ### The System class
 - From the `java.lang` package.
@@ -163,7 +163,7 @@ output.write(statement, 0, 5);
 
 
 
-## Serialization in Java [↑](#java-fundamentals-and-best-practices)
+## Serialization in Java [↑](#java-fundamentals-and-best-practices-)
 One of the benefits of using objects is the ability to encapsulate state (or data) to use within 
 a program.
 
@@ -193,7 +193,7 @@ a program.
 
 ---
 
-### The Serializable Interface [↑](#java-fundamentals-and-best-practices)
+### The Serializable Interface [↑](#java-fundamentals-and-best-practices-)
 - An interface describes the behavior a class.
 - By having a class implement `Serializable` it can be serialized by the Java Virtual Machine (JVM).
 - `Serializable` is a **market interface**. A marker interface provides run time information to 
@@ -214,7 +214,7 @@ public class Person implements Serializable {
 The `serialVersionUID` acts as an identified for the JVM to choose the proper class to convert a 
 stream of bytes back into an object.
 
-### Serializable Fields [↑](#java-fundamentals-and-best-practices)
+### Serializable Fields [↑](#java-fundamentals-and-best-practices-)
 - JVM defines a default way of serializing objects. This default **includes ignoring static class 
   fields** which belong to a class and not an object.
 - JVM also serializes all fields in an object, even those marked `private` and `final`.
@@ -222,13 +222,13 @@ stream of bytes back into an object.
   receive the default value for that type of field.
 - A static field belongs to the class and not to the object.
 
-### Serializing Associated (Reference Type) Fields [↑](#java-fundamentals-and-best-practices)
+### Serializing Associated (Reference Type) Fields [↑](#java-fundamentals-and-best-practices-)
 - For reference types to be serializable, they must also implement the `Serializable` interface.
 - If a reference type does not implement serializable, a `NotSerializableException` is thrown.
 - When JVM encounters a reference type, it will serialize the reference type first before trying 
   to serialize the encapsulating object.
 
-### Custom Serialization [↑](#java-fundamentals-and-best-practices)
+### Custom Serialization [↑](#java-fundamentals-and-best-practices-)
 ```java
 public class DateOfBirth {
   private int month;
@@ -309,7 +309,7 @@ ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 Person michaelCopy = (Person) objectInputStream.readObject();
 ```
 
-## Generics [↑](#java-fundamentals-and-best-practices)
+## Generics [↑](#java-fundamentals-and-best-practices-)
 - Allows the creation of generic classes and methods by specifying a _type parameter_.
 
 ```java
@@ -359,7 +359,7 @@ Box<String>("Apple");`
   wrapper object by automatically calling the `valueOf()` method.
 - The value can also be converted back to its primitive type using `integerWrapper.intValue()`;
 
-### Generic Interfaces [↑](#java-fundamentals-and-best-practices)
+### Generic Interfaces [↑](#java-fundamentals-and-best-practices-)
 
 ```java
 public interface Replacer<T>{
@@ -407,7 +407,7 @@ The code below shows how the non-generic class that implements a generic interfa
 Replacer<String> bagReplacer = new StringBag();
 ```
 
-### Generic Methods [↑](#java-fundamentals-and-best-practices)
+### Generic Methods [↑](#java-fundamentals-and-best-practices-)
 - It is also possible to make a generic method instead of the whole class being generic.
 - In creating a generic method, it is important to note that the generic type should be 
   indicated before the return type.
@@ -429,7 +429,7 @@ public class StringBox {
 - The `isString()` method accepts a parameter of any type (T-type).
 - The same format can also be done for static methods.
 
-### Raw Types [↑](#java-fundamentals-and-best-practices)]
+### Raw Types [↑](#java-fundamentals-and-best-practices-)
 - Below is an example of a class being instantiated as a raw type.
 
 ```java
@@ -459,7 +459,7 @@ public static void main(String[] args) {
   - Generics helps when the JVM applies type erasures. 
 
 
-### Multiple Type Parameters [↑](#java-fundamentals-and-best-practices)]
+### Multiple Type Parameters [↑](#java-fundamentals-and-best-practices-)
 ```java
 public class Box <T, S> {
   private T item1;
@@ -479,7 +479,7 @@ public class Util {
 }
 ```
 
-### Upper Bounds [↑](#java-fundamentals-and-best-practices)]
+### Upper Bounds [↑](#java-fundamentals-and-best-practices-)
 - When there is a need to restrict what class or interface could be used as a type argument.
 - Restricts a generic type to be a specific type or any type that `extends` it.
 
@@ -513,7 +513,7 @@ public class Box <T extends Number & Comparable<T>> {
   must come first followed by any interfaces.
 
 
-### Wildcards [↑](#java-fundamentals-and-best-practices)]
+### Wildcards [↑](#java-fundamentals-and-best-practices-)
 - denoted by `?` symbol represents an unknown type.
 - Makes the structure even more general and used when there is no need for a strict type checking.
 
@@ -572,7 +572,7 @@ When a `Boolean` type is used, this will result in an error.
   of a wildcard.
 
 
-## Collections [↑](#java-fundamentals-and-best-practices)
+## Collections [↑](#java-fundamentals-and-best-practices-)
 Collections Framework helps overcome the limits of an array and provide more complex functionality.
 
 The collection framework provides data structures and algorithms, which perform common tasks on 
@@ -585,7 +585,7 @@ implementation details.
 
 The following are the **Core Interfaces** of the Collections Framework.
 
-### 1. List Interface [↑](#java-fundamentals-and-best-practices)
+### 1. List Interface [↑](#java-fundamentals-and-best-practices-)
 - In a `List`, elements are ordered in sequence. Allows the existence of duplicate elements and 
   fine-grain control over where elements are inserted in the sequence.
 - Elements are index-based and has dynamic sizing.
@@ -607,7 +607,7 @@ In this code snippet, the ArrayList implements the List.
 
 ---
 
-### 2. Set Interface [↑](#java-fundamentals-and-best-practices)
+### 2. Set Interface [↑](#java-fundamentals-and-best-practices-)
 - A `Set` is a **collection of unique elements** and all of its methods ensure this stays true.
 
 #### Implementations
@@ -628,7 +628,7 @@ In this code snippet, the ArrayList implements the List.
 
 ---
 
-### 3. Queue Interface [↑](#java-fundamentals-and-best-practices)
+### 3. Queue Interface [↑](#java-fundamentals-and-best-practices-)
 - `Queue` implements and behaves like the Queue data structure.
 
 #### Implementations
@@ -653,7 +653,7 @@ Queue<String> stringQueue = new LinkedList<>();
 
 ---
 
-### 4. Dequeue Interface [↑](#java-fundamentals-and-best-practices)
+### 4. Dequeue Interface [↑](#java-fundamentals-and-best-practices-)
 - A type of `queue` that allows the access of elements from the **front and back** of the queue. 
   ("double-ended queue")
 
@@ -681,7 +681,7 @@ Queue<String> stringQueue = new LinkedList<>();
 
 ---
 
-### 5. Iterator Interface [↑](#java-fundamentals-and-best-practices)
+### 5. Iterator Interface [↑](#java-fundamentals-and-best-practices-)
 Iterate through a collection (deque) from front to back.
 ```java
 class collectionsDemo {
@@ -704,7 +704,7 @@ class collectionsDemo {
 ```
 ---
 
-### 6. Collection Interface [↑](#java-fundamentals-and-best-practices)
+### 6. Collection Interface [↑](#java-fundamentals-and-best-practices-)
 - The interface that keeps the Collections Framework polymorphic (compatible).
 - The `Collection` interface provides a generic, general-purpose API **when a program needs a 
 collection of elements** and **does not care about what type of collection it is**.
@@ -732,7 +732,7 @@ search**
 
 ---
 
-### 7. Map Interface [↑](#java-fundamentals-and-best-practices)
+### 7. Map Interface [↑](#java-fundamentals-and-best-practices-)
 - A generic interface for an object that holds key-value pairs as elements.
 - A _Key_ must be unique and maps only to one _Value_.
 - Is not an extension of the Collection interface.
@@ -752,7 +752,7 @@ Map<String, String> myMap = new HashMap<>();
   Returns `null` if the key is not in the `Map`.
 
 ---
-### Aggregate Operations [↑](#java-fundamentals-and-best-practices)
+### Aggregate Operations [↑](#java-fundamentals-and-best-practices-)
 - Methods that apply transformations to a `Stream` of data.
 - Usage of `Stream` to iterate through a `Collection` instead of using a for-loop and defining a 
   filter using manual IF conditions.
