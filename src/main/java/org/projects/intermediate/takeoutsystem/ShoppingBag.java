@@ -11,6 +11,9 @@ import java.util.Map;
 public class ShoppingBag<T extends PricedItem<Integer>> {
     private Map<T, Integer> shoppingBag;
 
+    /**
+     * CONSTRUCTOR
+     */
     public ShoppingBag() {
         shoppingBag = new HashMap<>();
     }
@@ -23,10 +26,18 @@ public class ShoppingBag<T extends PricedItem<Integer>> {
         }
     }
 
-//    public T getTotalPrice() {
-//        shoppingBag.values().stream()
-//                .map((quantity) -> quantity * )
-//    }
+    public int getTotalPrice() {
+        int totalPrice = 0;
+
+        for (T item: shoppingBag.keySet()) {
+            int itemPrice = item.getprice();
+            int quantity = shoppingBag.get(item);
+            int totalPriceOfItem = itemPrice * quantity;
+            totalPrice = totalPrice + totalPriceOfItem;
+        }
+
+        return totalPrice;
+    }
 
     public static void main(String[] args) {
         Map<String, Integer> sampleBag = new HashMap<String, Integer>();

@@ -1,5 +1,10 @@
 package org.projects.intermediate.takeoutsystem;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Food implements PricedItem<Integer> {
     private String name;
     private String description;
@@ -13,7 +18,7 @@ public class Food implements PricedItem<Integer> {
 
     @Override
     public Integer getprice() {
-        return 0;
+        return this.price;
     }
 
     @Override
