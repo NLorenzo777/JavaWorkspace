@@ -8,7 +8,17 @@ purpose of this repository is to easily access learning progress for review.
 1. Java Aspire Journey from codeCademy by SkillSoft.
 
 ## Contents:
-- [Fundamentals](Notes/JavaFundamentals.md/#java-fundamentals-and-best-practices-)
+### Java Fundamentals
+
+#### Data Structures
+
+#### Intermediate Java Fundamentals
+- [1. Input and Output (I/O)](Notes/intermediate/1_InputAndOutput.md)
+- [2. Serialization](Notes/intermediate/2_Serialization.md)
+- [3. Generics](Notes/intermediate/3_Generics.md)
+- [4. Collections Framework](Notes/intermediate/4_Collections.md)
+- [5. Nested Classes](Notes/intermediate/5_Nested-Classes.md)
+
 - **Packages**
   - [Math](Notes/Math.md)
   - [Character Wrapper Class](Notes/Character.md)
