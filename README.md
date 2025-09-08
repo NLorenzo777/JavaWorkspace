@@ -18,6 +18,7 @@ purpose of this repository is to easily access learning progress for review.
 - [3. Generics](Notes/intermediate/3_Generics.md)
 - [4. Collections Framework](Notes/intermediate/4_Collections.md)
 - [5. Nested Classes](Notes/intermediate/5_Nested-Classes.md)
+- [6. Threading](Notes/intermediate/6_Threading.md)
 
 - **Packages**
   - [Math](Notes/Math.md)
