@@ -148,3 +148,4 @@ public class Factorial {
 ## Supervising a Thread [↑](#threading-)
 - Sometimes there is a need to see the status of threads during their execution. In Java, the best pattern for this situation is using a **supervisor thread**.
 - This is a pattern where the main thread (or another thread) is able to watch and check on the progress of another thread, as long as it has access to the corresponding Thread instance.
+- Supervisor threads are often used for updating the user of the program on the progress of an ongoing task.
