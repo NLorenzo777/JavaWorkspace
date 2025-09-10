@@ -2,6 +2,7 @@
 - [Introduction](#introduction-)
   - [When to use Threads](#when-to-use-threads)
   - [Context in Thread](#context-of-a-thread)
+- [Thread Methods](#thread-methods-)
 - [Implementations](#implementation-)
   - [1. Extending the `Thread` class](#1-extending-the-thread-class-)
   - [2. Implementing the `Runnable` Interface](#2-implementing-the-runnable-interface-)
@@ -41,6 +42,16 @@
 - There is a point where some information (context) needs to be shared between threads.
   - example, in an online store, there are several threads. Each thread will be using the product ID or user ID at some point which usually originates at the start of the application (main thread).
   - However, when multiple threads tends to read/update a single shared-resource, there is a risk of that resource being out-dated. This issue is handled through the use of **synchronization**.
+
+## Thread Methods [↑](#threading-)
+
+| Function                  | Description                                                                                                                                             |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `.isAlive()`              | Returns `true` if the thread is still running, and `false` if it has terminated.<br/> A supervisor might continuously poll this value until it changes. |
+| `.setName(String name)`   | Set the name of the thread.                                                                                                                             |
+| `.getName()`              | Returns the name of the supervisor thread                                                                                                               |
+| `.sleep(int millisecond)` | Pause the execution of the thread for a given time in milliseconds.                                                                                     |
+
 
 
 ## Implementation [↑](#threading-)
@@ -149,3 +160,64 @@ public class Factorial {
 - Sometimes there is a need to see the status of threads during their execution. In Java, the best pattern for this situation is using a **supervisor thread**.
 - This is a pattern where the main thread (or another thread) is able to watch and check on the progress of another thread, as long as it has access to the corresponding Thread instance.
 - Supervisor threads are often used for updating the user of the program on the progress of an ongoing task.
+
+```java
+import java.time.Instant;
+import java.time.Duration;
+ 
+public class Factorial{
+ public int compute(int n){
+   // the existing method to compute factorials
+ }
+ 
+ // utility method to create a supervisor thread
+ public static Thread createSupervisor(Thread t){
+   Thread supervisor = new Thread(() -> {
+     Instant startTime = Instant.now();
+     // supervisor is polling for t's status
+     while (t.isAlive()) {
+       System.out.println(Thread.currentThread().getName() + " - Computation still running...");
+       Thread.sleep(1000);
+     }
+   });
+ 
+   // setting a custom name for the supervisor thread
+   supervisor.setName("supervisor");
+   return supervisor;
+ 
+ }
+ 
+ public static void main(String[] args){
+   Factorial f = new Factorial();
+ 
+   Thread t1 = new Thread(() -> {
+     System.out.println("25 factorial is...");
+     System.out.println(f.compute(25));
+   });
+ 
+ 
+   Thread supervisor = createSupervisor(t1);
+ 
+   t1.start();
+   supervisor.start();
+ 
+   System.out.println("Supervisor " + supervisor.getName() + " watching worker " + t1.getName());
+ }
+}
+```
+In this example, the Thread named `supervisor` is polling the status of the `t1` worker thread.
+
+
+## Waiting for a Thread Completion [↑](#threading-)
+Another common scenario in a multi-threaded programs is to wait for a thread to complete before proceeding.
+
+**Other term:** _awaiting_, _blocking_,
+
+**Java term:** **join**
+
+This is done using the `.start()` and `.join()` method of the Thread class. 
+
+
+
+
+
