@@ -8,6 +8,9 @@
   - [2. Implementing the `Runnable` Interface](#2-implementing-the-runnable-interface-)
     - [The Lambda Syntax](#lambda-expressions)
 - [Supervising a Thread](#supervising-a-thread-)
+- [Waiting for a Thread Completion](#waiting-for-a-thread-completion-)
+- [Synchronization](#thread-synchronization-)
+- [Thread Communications](#thread-communications-)
 
 ## Terms and Definitions: 
 
@@ -51,7 +54,7 @@
 | `.setName(String name)`   | Set the name of the thread.                                                                                                                             |
 | `.getName()`              | Returns the name of the supervisor thread                                                                                                               |
 | `.sleep(int millisecond)` | Pause the execution of the thread for a given time in milliseconds.                                                                                     |
-
+| `.join()` | Use to rejoin the Thread to its parent/main thread. Ensures that the thread is terminated before the next logic execution                               |
 
 
 ## Implementation [↑](#threading-)
@@ -218,6 +221,27 @@ Another common scenario in a multi-threaded programs is to wait for a thread to 
 This is done using the `.start()` and `.join()` method of the Thread class. 
 
 
+## Thread Synchronization [↑](#threading-)
+When accessing the same data from two different thread, a _race condition_ may occur
 
+- **Race Condition** occurs when some inconsistency is caused by two threads trying to access the same shared data at the same time.
+
+### Preventing the Race Condition
+Race conditions can be prevented using the `synchronized` keyword in Java. 
+When this keyword is added, it will ensure that for a given instance of a class, only one thread can run that method at a time.
+
+```java
+public synchronized void incrementElement(int i, int j) {
+    array[i] += j;
+}
+```
+
+## Thread Communications [↑](#threading-)
+In Java, to control thread execution from within other threads, the following methods are used:
+- `.wait()`
+- `.notify()`
+- `.notifyAll()`
+
+These are primarily used to protect shared resources from being used by two threads at the same time or to wait until some condition has changed in a thread.
 
 
