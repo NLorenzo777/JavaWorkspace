@@ -238,10 +238,90 @@ public synchronized void incrementElement(int i, int j) {
 
 ## Thread Communications [↑](#threading-)
 In Java, to control thread execution from within other threads, the following methods are used:
-- `.wait()`
+- `.wait()`: Block the execution of the current thread
 - `.notify()`
-- `.notifyAll()`
+- `.notifyAll()`: Allow other threads to check their condition again and proceed.
 
-These are primarily used to protect shared resources from being used by two threads at the same time or to wait until some condition has changed in a thread.
+These are primarily used to protect shared resources from being used by two threads at the same time or to wait until some condition 
+has changed in a thread.
+
+### `synchronized(this)` block
+When a `synchronized(this)` block is created, we are telling Java that we want it to be the only thread accessing the fields of the class at a given moment.
+
+In this block, we must:
+1. Check the condition on which to wait.
+2. Decide whether to `wait()` or `notifyAll()`.
+
+```java
+import java.lang.Thread;
+ 
+public class OrderDinnerProcess {
+ private boolean foodArrived = false;
+ 
+ private void printTask(String task) { 
+   System.out.println(Thread.currentThread().getName() + " - " + task);
+ }
+ 
+ public void eatFood() {
+   printTask("Wow, I am starving!");
+   try {
+     synchronized (this) {
+       while (!this.foodArrived) {
+         printTask("Waiting for the food to arrive...");
+         wait();
+       }
+     }
+   } catch (InterruptedException e) {
+     System.out.println(e);
+   }
+   printTask("Finally! Yum yum yum!!!");
+ }
+ 
+ public void deliverFood() {
+   printTask("Driving food over...");
+   try {
+     Thread.sleep(5000);
+     synchronized (this) {
+       this.foodArrived = true;
+       printTask("Arrived!");
+       notifyAll();
+     }
+   } catch (InterruptedException e) {
+     System.out.println(e);
+   }
+ }
+ 
+ public static void main(String[] args) {
+   OrderDinnerProcess p = new OrderDinnerProcess();
+   try {
+     for (int i = 0; i < 5; i++) {
+       Thread eatFood = new Thread(() -> p.eatFood());
+       eatFood.start();
+     }
+     Thread.sleep(1000);
+     Thread delivery = new Thread(() -> p.deliverFood());
+     delivery.start();
+   } catch (InterruptedException e) {
+     System.out.println(e);
+   }
+ }
+}
+
+```
+- In this example, a family of five eager to eat some dinner is simulated. However, they cannot eat until the food has arrived.
+- The `synchronized` block is used to tell Java that only one thread should be able to read from and write to the `foodArrived()` field at a time.
+- The `wait()` function is used to pause execution for a thread until a call has been made to `notifyAll()`, which triggers another check of the condition.
+- The `notifyAll()` function is used to tell al threads that are currently waiting that they may now proceed.
+- In addition to being used to coordinate thread execution, we can use the `synchronized(this)` block, `wait()`, and `notifyAll()` to control access to shared resources. 
+If a resource is currently in use, a thread should `wait()` until a call to `notifyAll()` is made, which indicates that the shared resource may have been released and is ready for use.
+
+## Thread Lifecycle [↑](#threading-)
+A thread normally exists in one of the five states throughout its lifecycle.
+
+1. New
+2. Running or Active
+3. Blocked
+4. Waiting
+5. Terminated or Joined
 
 
