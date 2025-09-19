@@ -1,4 +1,4 @@
-# Parallel and Concurrent Programming
+# Parallel and Concurrent Programming [↑](../../README.md#advanced-java-fundamentals)
 
 ## Concurrency and Parallelism
 - **Concurrency** is the act of processing more than one task at seemingly the same time on the same CPU, requiring the ability to switch between tasks.

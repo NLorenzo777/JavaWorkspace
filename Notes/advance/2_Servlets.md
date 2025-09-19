@@ -1,4 +1,4 @@
-# Servlets
+# Servlets [↑](../../README.md#advanced-java-fundamentals)
 - A Java servlet is a Java class whose sole purpose is to receive a network request and response object (typically HTTP) and construct the necessary response.
 - This allows to create dynamic responses (like a dynamic webpage) based on a request sent by a client.
 - Makes it easy to create web applications incorporated with all the benefits of Java, like **portability** and **security**
