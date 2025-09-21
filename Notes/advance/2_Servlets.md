@@ -43,3 +43,6 @@ public class HelloServlet extends HttpServlet {
     }
 }
 ```
+
+## Setting up of Environment for Servlet
+To start working with and make HTTP requests to Java Servlets, a **web server** and a **servlet container** is needed.
