@@ -24,14 +24,6 @@ purpose of this repository is to easily access learning progress for review.
 - [2. Servlets](Notes/advance/2_Servlets.md)
 - [3. Sockets](Notes/advance/3_Sockets.md)
 
-
-#### Spring Framework
-- [1. Spring Framework Introduction](Notes/spring/fundamentals/1_spring-introduction.md)
-- [2. Spring Controllers](Notes/spring/fundamentals/2_spring-controllers.md)
-- [3. Spring Beans](Notes/spring/fundamentals/3_Spring-Bean.md)
-- [4. Spring Boot](Notes/spring/fundamentals/4_Spring-Boot.md)
-
-
 #### Packaged
 - [Math](Notes/Math.md)
 - [Character Wrapper Class](Notes/Character.md)
@@ -46,15 +38,15 @@ purpose of this repository is to easily access learning progress for review.
 - [Graph](src/main/java/org/datastructures/graph)
 
 
-### Data Structures
-1. Node
-2. LinkedList
-3. Queue
-4. Stack
-5. HashMap
-6. Tree
-7. Graph
+### Spring Framework
+- [2. Spring Controllers](Notes/spring/fundamentals/2_spring-controllers.md)
+- [3. Spring Beans](Notes/spring/fundamentals/3_Spring-Bean.md)
+- [4. Spring Boot](Notes/spring/fundamentals/4_Spring-Boot.md)
 
-### Search Algorithms
-1. Binary Search
+#### I. Spring Basics
+- [1.1. Spring Framework Introduction](Notes/spring/fundamentals/1_1_spring-introduction)
+- [1.2. Spring Architecture](Notes/spring/fundamentals/1_2_spring-architecture.md)
+
+#### II. Core Spring
+- [2.1. Inversion of Control]()
 
