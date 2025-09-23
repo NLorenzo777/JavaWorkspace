@@ -44,9 +44,10 @@ purpose of this repository is to easily access learning progress for review.
 - [4. Spring Boot](Notes/spring/fundamentals/4_Spring-Boot.md)
 
 #### I. Spring Basics
-- [1.1. Spring Framework Introduction](Notes/spring/fundamentals/1_1_spring-introduction)
+- [1.1. Spring Framework Introduction](Notes/spring/fundamentals/1_1_spring-introduction.md)
 - [1.2. Spring Architecture](Notes/spring/fundamentals/1_2_spring-architecture.md)
 
 #### II. Core Spring
-- [2.1. Inversion of Control]()
+- [2.1. Inversion of Control](Notes/spring/fundamentals/2_1_IoC.md)
+- [2.2. BeanFactory](Notes/spring/fundamentals/2_2_BeanFactory.md)
 
