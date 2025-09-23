@@ -50,4 +50,7 @@ purpose of this repository is to easily access learning progress for review.
 #### II. Core Spring
 - [2.1. Inversion of Control](Notes/spring/fundamentals/2_1_IoC.md)
 - [2.2. BeanFactory](Notes/spring/fundamentals/2_2_BeanFactory.md)
+- [2.3. ApplicationContext](Notes/spring/fundamentals/2_3_ApplicationContext.md)
+- [2.4. DependencyInjection](Notes/spring/fundamentals/2_4_Dependency-Injection.md) `WORK IN PROGRESS`
+- [2.5. Bean Lifecycle](Notes/spring/fundamentals/2_5_Bean-Lifecycle.md)
 
