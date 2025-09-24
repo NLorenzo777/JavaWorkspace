@@ -53,4 +53,6 @@ purpose of this repository is to easily access learning progress for review.
 - [2.3. ApplicationContext](Notes/spring/fundamentals/2_3_ApplicationContext.md)
 - [2.4. DependencyInjection](Notes/spring/fundamentals/2_4_Dependency-Injection.md) `WORK IN PROGRESS`
 - [2.5. Bean Lifecycle](Notes/spring/fundamentals/2_5_Bean-Lifecycle.md)
+- [2.6. Bean Scopes](Notes/spring/fundamentals/2_6_Bean-Scopes.md)
+- [2.7. Expression Language (SpEL)](Notes/spring/fundamentals/2_7_SpEL.md)
 
