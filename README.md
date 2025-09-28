@@ -56,3 +56,18 @@ purpose of this repository is to easily access learning progress for review.
 - [2.6. Bean Scopes](Notes/spring/fundamentals/2_6_Bean-Scopes.md)
 - [2.7. Expression Language (SpEL)](Notes/spring/fundamentals/2_7_SpEL.md)
 
+#### III. Spring Annotations
+Spring Annotations are a form of metadata that provides data about a program. 
+Annotations are used to provide supplemental information about a program.
+It does not have a direct effect on the operation of the code they annotate.
+
+- [@ComponentScan](Notes/spring/annotations/1_ComponentScan.md)
+- [@Component](Notes/spring/annotations/2_Component.md)
+  - [@Service](Notes/spring/annotations/2_1_Service.md)
+  - [@Controller](Notes/spring/annotations/2_2_Controller.md)
+  - [@Repository](Notes/spring/annotations/2_3_Repository.md)
+- [@Configuration](Notes/spring/annotations/3_Configuration.md)
+- [@Value](Notes/spring/annotations/4_Value.md)
+- [@Autowired](Notes/spring/annotations/5_Autowired.md)
+- [@Qualifier](Notes/spring/annotations/6_Qualifier)
+

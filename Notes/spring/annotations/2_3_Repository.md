@@ -97,5 +97,72 @@ public interface DemoRepository<T> {
 #### Create the implementing repository class
 
 ```java
+// Java Program to illustrate StudentRepository File
 
+package com.example.demo.repository;
+
+import com.example.demo.entity.Student;
+import org.springframework.stereotype.Repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Repository
+public class StudentRepository implements DemoRepository<Student> {
+
+    // Using an in-memory Map
+    // to store the object data
+    private Map<Long, Student> repository;
+
+    public StudentRepository() {
+        this.repository = new HashMap<>();
+    }
+
+    // Implementation for save method
+    @Override
+    public void save(Student student) {
+        repository.put(student.getId(), student);
+    }
+
+    // Implementation for findStudentById method
+    @Override
+    public Student findStudentById(Long id) {
+        return repository.get(id);
+    }
+}
+```
+
+#### Test the Spring Repository
+```java
+package com.example.demo;
+
+import com.example.demo.entity.Student;
+import com.example.demo.repository.StudentRepository;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+@SpringBootApplication
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.scan("com.example.demo");
+        context.refresh();
+
+        StudentRepository repository = context.getBean(StudentRepository.class);
+
+        // testing the store method
+        repository.save(new Student(1L, "Anshul", 25));
+        repository.save(new Student(2L, "Mayank", 23));
+
+        // testing the retrieve method
+        Student student = repository.findStudentById(1L);
+        System.out.println(student);
+
+        // close the spring context
+        context.close();
+    }
+
+}
 ```
