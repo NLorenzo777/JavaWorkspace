@@ -1,3 +1,6 @@
+#### `PREVIOUS TOPIC:` [Spring Boot Introduction](1_springboot.md)
+---------
+
 # Spring Boot - Application Properties [↑](../../../README.md#iv-spring-boot)
 - Configuration plays a very important role in customizing the behavior of the application.
 - Instead of hardcoding values, Spring Boot provides a flexible way to configure application properties using **application.properties** or **application.yml** file.
@@ -89,3 +92,6 @@ eureka:
   instance:
     hostname: localhost
 ```
+
+------
+#### `NEXT TOPIC:` [Dependency Management](3_dependency-management.md)
