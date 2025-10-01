@@ -76,4 +76,5 @@ It does not have a direct effect on the operation of the code they annotate.
 Simplified application setup with autoconfiguration, embedded servers and production-ready tools
 - [4.1. Introduction](Notes/spring/springboot/1_springboot.md)
 - [4.2. Application Properties](Notes/spring/springboot/2_application-properties.md)
-- [4.3. Dependency Management]
+- [4.3. Dependency Management](Notes/spring/springboot/3_dependency-management.md)
+- [4.4. Starters](Notes/spring/springboot/4_starters.md)
