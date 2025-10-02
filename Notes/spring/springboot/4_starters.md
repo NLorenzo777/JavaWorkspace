@@ -63,7 +63,7 @@ It can start with the name of the project. For example, if the name of the proje
 - `sprin-boot-starter-oauth2-client`: Starter for using Spring Security’s OAuth2/OpenID Connect client features
 - `spring-boot-starter-oauth2-resource-server`: Starter for using Spring Security’s OAuth2 resource server features
 - `spring-boot-starter-security`: Starter for using Spring Security.
-- `sprint-boot-starter-test`: Starter for testing Spring Boot applications with libraries including JUnit Jupiter, Hamcrest and Mockito
+- `spring-boot-starter-test`: Starter for testing Spring Boot applications with libraries including JUnit Jupiter, Hamcrest and Mockito
 - `spring-boot-starter-web`: Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container
 
 ### Production Starter [↑](#spring-boot---starters-)
@@ -76,3 +76,6 @@ It can start with the name of the project. For example, if the name of the proje
 - `spring-boot-starter-reactor-netty`: Starter for using Reactor Netty as the embedded reactive HTTP server
 - `spring-boot-starter-tomcat`: Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web
 - `spring-boot-starter-undertow`: Starter for using Undertow as the embedded servlet container. An alternative to spring-boot-starter-tomcat
+
+-----
+#### `NEXT TOPIC:` [Exception Handling](5_exception-handling.md)
