@@ -78,4 +78,4 @@ Simplified application setup with autoconfiguration, embedded servers and produc
 - [4.2. Application Properties](Notes/spring/springboot/2_application-properties.md)
 - [4.3. Dependency Management](Notes/spring/springboot/3_dependency-management.md)
 - [4.4. Starters](Notes/spring/springboot/4_starters.md)
-- [4.5. Exception Handling](Note)
+- [4.5. Exception Handling](Notes/spring/springboot/5_exception-handling.md)
