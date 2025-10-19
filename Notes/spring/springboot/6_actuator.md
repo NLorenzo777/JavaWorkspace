@@ -6,7 +6,7 @@
 - Developers can manage their applications easily by **/actuator** and **/actuator/health** endpoints.
 
 <div align="center">
-<img src="actuators.png" alt="actuators"/>
+<img src="../../../img/actuators.png" alt="actuators"/>
 </div>
 
 ## Advantages of Actuators
@@ -50,21 +50,7 @@ Example -> management.endpoint.metrics.enabled=true
 management.endpoints.web.exposure.include=metrics,info
 ```
 
-#### Include onlyt metrics and info IDs and will exclude others
+#### Include only metrics and info IDs and will exclude others
 ```text
 management.endpoints.web.exposure.include=*
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
