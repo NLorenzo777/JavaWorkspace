@@ -83,4 +83,10 @@ Simplified application setup with autoconfiguration, embedded servers and produc
 
 ### V. Spring MVC
 Spring MVC helps build web applications using the Model-View-Controller design pattern.
-- [5.1. Introduction]
+- [5.1. Introduction](Notes/spring/springmvc/1_Introduction.md)
+- [5.2. Java-based Configuration](Notes/spring/springmvc/2_java-based-configuration.md)
+- `[WORK IN PROGRESS]`
+
+### VI. Spring with REST API
+Spring's support for RESTful web services allows developers to create robust APIs that can be consumed by various clients.
+- [6.1. REST Controller](Notes/spring/springRestAPI/1_rest-controller.md)
