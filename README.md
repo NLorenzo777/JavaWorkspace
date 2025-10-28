@@ -90,3 +90,5 @@ Spring MVC helps build web applications using the Model-View-Controller design p
 ### VI. Spring with REST API
 Spring's support for RESTful web services allows developers to create robust APIs that can be consumed by various clients.
 - [6.1. REST Controller](Notes/spring/springRestAPI/1_rest-controller.md)
+- [6.2. RESTFul Web Services](Notes/spring/springRestAPI/2_restful-web-services.md)
+- [6.3. REST JSON Response](Notes/spring/springRestAPI/3_rest-json-response.md)
