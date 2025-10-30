@@ -92,3 +92,5 @@ Spring's support for RESTful web services allows developers to create robust API
 - [6.1. REST Controller](Notes/spring/springRestAPI/1_rest-controller.md)
 - [6.2. RESTFul Web Services](Notes/spring/springRestAPI/2_restful-web-services.md)
 - [6.3. REST JSON Response](Notes/spring/springRestAPI/3_rest-json-response.md)
+- [6.4. REST XML Response](Notes/spring/springRestAPI/4_rest-xml-response.md)
+- [6.5. Jackson Integration](Notes/spring/springRestAPI/5_jackson-integration.md)

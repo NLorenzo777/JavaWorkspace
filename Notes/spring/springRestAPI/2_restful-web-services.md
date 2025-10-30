@@ -1,7 +1,14 @@
 # Spring Boot - Introduction to RESTful Web Services [↑](../../../README.md#vi-spring-with-rest-api)
-
 - RESTful web services provide a standard approach to building scalable, stateless web APIs using HTTP.
 - Unlike SOAP, REST does not rely on a strict messaging protocol, it can use multiple formats such as JSON or XML.
+
+#### Table of contents
+1. [Key Concepts](#key-concepts)
+2. [HTTP Methods](#http-methods-)
+3. [HTTP Status Codes](#http-status-codes-)
+4. [REST API Response](#rest-api-response-)
+5. [Security Best Practices](#security-best-practices-)
+6. [Advantages](#advantages-)
 
 ## Key Concepts
 - **Resource:** Any object, entity, or service that can be accessed via URI.
@@ -71,6 +78,18 @@ public ResponseEntity<String> deleteUser(@PathVariable int userId) {
 - `401`: Unauthorized
 - `404`: Resource Not Found
 - `500`: Server Error
+
+## REST API Response [↑](#spring-boot---introduction-to-restful-web-services-)
+REST APIs can return data in multiple formats including:
+- JSON
+- XML
+- HTML
+- XLT
+- Python
+- PHP
+- Plain text
+
+**JSON** is the most commonly used format due to its lightweight nature and ease of parsing. However, **XML** has its own advantages, especially in enterprise applications.
 
 ## Security Best Practices [↑](#spring-boot---introduction-to-restful-web-services-)
 - **Authentication and Authorization**: Use JWT or OAuth 2.0
