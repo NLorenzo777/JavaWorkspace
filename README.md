@@ -94,3 +94,8 @@ Spring's support for RESTful web services allows developers to create robust API
 - [6.3. REST JSON Response](Notes/spring/springRestAPI/3_rest-json-response.md)
 - [6.4. REST XML Response](Notes/spring/springRestAPI/4_rest-xml-response.md)
 - [6.5. Jackson Integration](Notes/spring/springRestAPI/5_jackson-integration.md)
+- [6.6. RestTemplate](Notes/spring/springrestAPI/6_rest-template.md)
+
+### VII. Spring Data JPA
+Spring Data JPA makes it easy to implement JPA-based repositories with minimal boilerplate code
+- [7.1. Introduction](Notes/spring/springdatajpa/1_introduction.md)
