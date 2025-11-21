@@ -66,7 +66,7 @@ public ResponseEntity<String> deleteUser(@PathVariable int userId) {
 ## HTTP Status Codes [↑](#spring-boot---introduction-to-restful-web-services-)
 
 | Status Code | Definition    |
-| ----------- | ------------- |
+|-------------|---------------|
 | 1XX         | Informational |
 | 2XX         | Successful    |
 | 3XX         | Redirection   |

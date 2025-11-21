@@ -1,4 +1,4 @@
-# Spring Data Framework - Introduction [↑](../../../README.md#vi-spring-with-rest-api)
+# Spring Data Framework - Introduction [↑](../../../README.md#vii-spring-data-jpa)
 Spring Data is a data access framework in the Spring ecosystem that simplifies database interactions for SQL and NoSQL databases.
 
 It eliminates boilerplate code and provides an easy-to-use abstraction layer for developers working with JPA, MongoDB, and more.
@@ -30,3 +30,12 @@ Spring Data is a parent project that consists of multiple submodules, each desig
     - **Spring Data Hadoop**: Integration with Hadoop ecosystem for large-scale data processing.
     - **Spring Data Hive, Pig, and Cascading**: Support for distributed programming.
 
+## Repositories
+A repository is an abstraction layer between domain models and the database. 
+It enables CRUD operations without writing SQL queries manually.
+
+#### Steps to use a Repository:
+1. Create a POJO entity representing the data model.
+2. Extend `JpaRepository`, `CrudRepository`, or `MongoRepository`.
+3. Define custom query methods using **Spring Data Query Methods**.
+4. Inject the repository into services and use it for database operations.

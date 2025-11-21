@@ -4,8 +4,11 @@ Repository for learning Java continuously which contains some information on bas
 `Disclaimer:` This repository does not intend to replicate existing content. The sole
 purpose of this repository is to easily access learning progress for review.
 
-## Sources:
-1. Java Aspire Journey from codeCademy by SkillSoft.
+## Quick Links:
+
+
+## HOW TOs:
+- [Configuring a Repository](Notes/how-tos/configuring-a-repository.md)
 
 ## Java Fundamentals
 
@@ -99,3 +102,10 @@ Spring's support for RESTful web services allows developers to create robust API
 ### VII. Spring Data JPA
 Spring Data JPA makes it easy to implement JPA-based repositories with minimal boilerplate code
 - [7.1. Introduction](Notes/spring/springdatajpa/1_introduction.md)
+- [7.2. Annotations](Notes/spring/springdatajpa/2_annotations.md)
+  - [`@Table` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-table-annotation-)
+  - [`@Column` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-column-annotation-)
+  - [`@Id` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-id-and-generatedvalue-annotation-)
+
+### IX. Spring JDBC
+Spring JDBC provides a simple template-based API for database interaction
