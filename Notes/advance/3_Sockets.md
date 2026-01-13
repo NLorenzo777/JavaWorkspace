@@ -1,4 +1,4 @@
-# Sockets [↑](../../README.md#advanced-java-fundamentals)
+# Sockets [↑](../../README.md#java-fundamentals)
 
 ## Transmission Control Protocol (TCP)
 - Transport protocols for HTTP response/requests used by sockets.

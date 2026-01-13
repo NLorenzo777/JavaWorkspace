@@ -1,4 +1,4 @@
-# Generics [↑](../../README.md#intermediate-java-fundamentals)
+# Generics [↑](../../README.md#java-fundamentals)
 
 - [Generic Interfaces](#generic-interfaces-)
 - [Generic Methods](#generic-methods-)

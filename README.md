@@ -6,39 +6,108 @@ purpose of this repository is to easily access learning progress for review.
 
 ## Quick Links:
 
-
 ## HOW TOs:
 - [Configuring a Repository](Notes/how-tos/configuring-a-repository.md)
 
 ## Java Fundamentals
 
-### Intermediate Java Fundamentals
-- [1. Input and Output (I/O)](Notes/intermediate/1_InputAndOutput.md)
-- [2. Serialization](Notes/intermediate/2_Serialization.md)
-- [3. Generics](Notes/intermediate/3_Generics.md)
-- [4. Collections Framework](Notes/intermediate/4_Collections.md)
-- [5. Nested Classes](Notes/intermediate/5_Nested-Classes.md)
-- [6. Threading](Notes/intermediate/6_Threading.md)
+<html lang="eng">
+  <div align="center">
+    <table>
+      <tr>
+        <th>Intermediate Java</th>
+        <th>Advanced Java</th>
+        <th>Data Structures</th>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/1_InputAndOutput.md">Input and Output (I/O)</a></td>
+        <td><a href="Notes/advance/1_Parallel-and-Concurrent-Programming.md">Parallel and Concurrent Programming</a></td>
+        <td><a href="src/main/java/org/datastructures/nodes">Nodes</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/2_Serialization.md">Serialization</a></td>
+        <td><a href="Notes/advance/2_Servlets.md">Servlets</a></td>
+        <td><a href="src/main/java/org/datastructures/linkedlist">LinkedList</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/3_Generics.md">Generics</a></td>
+        <td><a href="Notes/advance/3_Sockets.md">Sockets</a></td>
+        <td><a href="src/main/java/org/datastructures/queue">Queue</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/4_Collections.md">Collections</a></td>
+        <td></td>
+        <td><a href="src/main/java/org/datastructures/stack">Stacks</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/5_Nested-Classes.md">Nested Classes</a></td>
+        <td></td>
+        <td><a href="src/main/java/org/datastructures/hashmap">Hashmaps</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/intermediate/6_Threading.md">Threading</a></td>
+        <td></td>
+        <td><a href="src/main/java/org/datastructures/trees">Trees</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><a href="src/main/java/org/datastructures/graph">Graphs</a></td>
+      </tr>
+    </table>
+  </div>
+</html>
 
+[//]: # (## Java Fundamentals)
 
-### Advanced Java Fundamentals
-- [1. Parallel and Concurrent Programming](Notes/advance/1_Parallel-and-Concurrent-Programming.md)
-- [2. Servlets](Notes/advance/2_Servlets.md)
-- [3. Sockets](Notes/advance/3_Sockets.md)
+[//]: # ()
+[//]: # (### Intermediate Java Fundamentals)
 
-### Packaged
-- [Math](Notes/Math.md)
-- [Character Wrapper Class](Notes/Character.md)
+[//]: # (- [1. Input and Output &#40;I/O&#41;]&#40;Notes/intermediate/1_InputAndOutput.md&#41;)
 
-### Data Structures
-- [Nodes](src/main/java/org/datastructures/nodes)
-- [LinkedList](src/main/java/org/datastructures/linkedlist)
-- [Queue](src/main/java/org/datastructures/queue)
-- [Stack](src/main/java/org/datastructures/stack)
-- [HashMap](src/main/java/org/datastructures/hashmap)
-- [Tree](src/main/java/org/datastructures/trees)
-- [Graph](src/main/java/org/datastructures/graph)
+[//]: # (- [2. Serialization]&#40;Notes/intermediate/2_Serialization.md&#41;)
 
+[//]: # (- [3. Generics]&#40;Notes/intermediate/3_Generics.md&#41;)
+
+[//]: # (- [4. Collections Framework]&#40;Notes/intermediate/4_Collections.md&#41;)
+
+[//]: # (- [5. Nested Classes]&#40;Notes/intermediate/5_Nested-Classes.md&#41;)
+
+[//]: # (- [6. Threading]&#40;Notes/intermediate/6_Threading.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Advanced Java Fundamentals)
+
+[//]: # (- [1. Parallel and Concurrent Programming]&#40;Notes/advance/1_Parallel-and-Concurrent-Programming.md&#41;)
+
+[//]: # (- [2. Servlets]&#40;Notes/advance/2_Servlets.md&#41;)
+
+[//]: # (- [3. Sockets]&#40;Notes/advance/3_Sockets.md&#41;)
+
+[//]: # ()
+[//]: # (### Packaged)
+
+[//]: # (- [Math]&#40;Notes/Math.md&#41;)
+
+[//]: # (- [Character Wrapper Class]&#40;Notes/Character.md&#41;)
+
+[//]: # ()
+[//]: # (### Data Structures)
+
+[//]: # (- [Nodes]&#40;src/main/java/org/datastructures/nodes&#41;)
+
+[//]: # (- [LinkedList]&#40;src/main/java/org/datastructures/linkedlist&#41;)
+
+[//]: # (- [Queue]&#40;src/main/java/org/datastructures/queue&#41;)
+
+[//]: # (- [Stack]&#40;src/main/java/org/datastructures/stack&#41;)
+
+[//]: # (- [HashMap]&#40;src/main/java/org/datastructures/hashmap&#41;)
+
+[//]: # (- [Tree]&#40;src/main/java/org/datastructures/trees&#41;)
+
+[//]: # (- [Graph]&#40;src/main/java/org/datastructures/graph&#41;)
 
 ## Spring Framework
 - [2. Spring Controllers](Notes/spring/fundamentals/2_spring-controllers.md)

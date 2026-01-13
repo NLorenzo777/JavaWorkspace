@@ -1,4 +1,4 @@
-# Input and Output in Java [↑](../../README.md#intermediate-java-fundamentals)
+# Input and Output in Java [↑](../../README.md#java-fundamentals)
 - [Scanner Class](#the-scanner-class-)
 - [FileReader and FileWriter Class](#filereader-and-filewriter-class-)
 

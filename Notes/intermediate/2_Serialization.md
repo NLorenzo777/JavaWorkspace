@@ -1,4 +1,4 @@
-# Serialization in Java  [↑](../../README.md#intermediate-java-fundamentals)
+# Serialization in Java  [↑](../../README.md#java-fundamentals)
 - [Serializable Interface](#the-serializable-interface-)
 - [Serializable Fields](#serializable-fields-)
 - [Serializing Reference Types](#serializing-associated-reference-type-fields-)

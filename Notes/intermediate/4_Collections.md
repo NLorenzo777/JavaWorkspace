@@ -1,4 +1,4 @@
-# Collections [↑](../../README.md#intermediate-java-fundamentals)
+# Collections [↑](../../README.md#java-fundamentals)
 
 - [`List` Core Interface](#1-list-interface-)
 - [`Set` Core Interface](#2-set-interface-)

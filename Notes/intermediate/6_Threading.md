@@ -1,4 +1,4 @@
-# Threading [↑](../../README.md#intermediate-java-fundamentals)
+# Threading [↑](../../README.md#java-fundamentals)
 - [Introduction](#introduction-)
   - [When to use Threads](#when-to-use-threads)
   - [Context in Thread](#context-of-a-thread)

@@ -1,4 +1,4 @@
-# Nested Classes in Java  [↑](../../README.md#intermediate-java-fundamentals)
+# Nested Classes in Java  [↑](../../README.md#java-fundamentals)
 
 
 ## Nested Classes
