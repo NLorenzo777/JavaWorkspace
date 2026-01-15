@@ -58,59 +58,65 @@ purpose of this repository is to easily access learning progress for review.
   </div>
 </html>
 
-[//]: # (## Java Fundamentals)
-
-[//]: # ()
-[//]: # (### Intermediate Java Fundamentals)
-
-[//]: # (- [1. Input and Output &#40;I/O&#41;]&#40;Notes/intermediate/1_InputAndOutput.md&#41;)
-
-[//]: # (- [2. Serialization]&#40;Notes/intermediate/2_Serialization.md&#41;)
-
-[//]: # (- [3. Generics]&#40;Notes/intermediate/3_Generics.md&#41;)
-
-[//]: # (- [4. Collections Framework]&#40;Notes/intermediate/4_Collections.md&#41;)
-
-[//]: # (- [5. Nested Classes]&#40;Notes/intermediate/5_Nested-Classes.md&#41;)
-
-[//]: # (- [6. Threading]&#40;Notes/intermediate/6_Threading.md&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (### Advanced Java Fundamentals)
-
-[//]: # (- [1. Parallel and Concurrent Programming]&#40;Notes/advance/1_Parallel-and-Concurrent-Programming.md&#41;)
-
-[//]: # (- [2. Servlets]&#40;Notes/advance/2_Servlets.md&#41;)
-
-[//]: # (- [3. Sockets]&#40;Notes/advance/3_Sockets.md&#41;)
-
-[//]: # ()
-[//]: # (### Packaged)
-
-[//]: # (- [Math]&#40;Notes/Math.md&#41;)
-
-[//]: # (- [Character Wrapper Class]&#40;Notes/Character.md&#41;)
-
-[//]: # ()
-[//]: # (### Data Structures)
-
-[//]: # (- [Nodes]&#40;src/main/java/org/datastructures/nodes&#41;)
-
-[//]: # (- [LinkedList]&#40;src/main/java/org/datastructures/linkedlist&#41;)
-
-[//]: # (- [Queue]&#40;src/main/java/org/datastructures/queue&#41;)
-
-[//]: # (- [Stack]&#40;src/main/java/org/datastructures/stack&#41;)
-
-[//]: # (- [HashMap]&#40;src/main/java/org/datastructures/hashmap&#41;)
-
-[//]: # (- [Tree]&#40;src/main/java/org/datastructures/trees&#41;)
-
-[//]: # (- [Graph]&#40;src/main/java/org/datastructures/graph&#41;)
-
 ## Spring Framework
-- [2. Spring Controllers](Notes/spring/fundamentals/2_spring-controllers.md)
+<html lang="eng">
+  <div align="center">
+    <table>
+      <tr>
+        <th colspan="2">Spring Basics</th>
+      </tr>
+      <tr>
+        <td colspan="2"><a href="Notes/spring/fundamentals/2_spring-controllers.md">Spring Framework Introduction</a></td>
+      </tr>
+      <tr>
+        <td colspan="2"><a href="Notes/spring/fundamentals/1_2_spring-architecture.md">Spring Architecture</a></td>
+      </tr>
+      <tr>
+        <th>Core Spring</th>
+        <th ondrag="">Spring Annotations</th>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_1_IoC.md">Inversion of Control</a></td>
+        <td><a href="Notes/spring/annotations/1_ComponentScan.md">@ComponentScan</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_2_BeanFactory.md">BeanFactory</a></td>
+        <td>
+          <div><a href="Notes/spring/annotations/2_Component.md">@Component</a></div>
+          <div>
+            <ul>
+              <li><a href="Notes/spring/annotations/2_1_Service.md">@Service</a></li>
+              <li><a href="Notes/spring/annotations/2_2_Controller.md">@Controller</a></li>
+              <li><a href="Notes/spring/annotations/2_3_Repository.md">@Repository</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_4_Dependency-Injection.md">Dependency Injection</a></td>
+        <td><a href="Notes/spring/annotations/3_Configuration.md">@Configuration</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_5_Bean-Lifecycle.md">Bean Lifecycle</a></td>
+        <td><a href="Notes/spring/annotations/4_Value.md">@Value</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_6_Bean-Scopes.md">Bean Scopes</a></td>
+        <td><a href="Notes/spring/annotations/5_Autowired.md">@Autowired</a></td>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/fundamentals/2_7_SpEL.md">Expression Language (SpEL)</a></td>
+        <td><a href="Notes/spring/annotations/6_Qualifier.md">@Qualifier</a></td>
+      </tr>
+      <tr>
+        <td class="wip"><a href="Notes/spring/fundamentals/">RowMapper and ResultSetExtractor</a></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</html>
+
+- [2. Spring Controllers]()
 - [3. Spring Beans](Notes/spring/fundamentals/3_Spring-Bean.md)
 - [4. Spring Boot](Notes/spring/fundamentals/4_Spring-Boot.md)
 
