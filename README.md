@@ -152,9 +152,36 @@ purpose of this repository is to easily access learning progress for review.
         <td></td>
         <td></td>
       </tr>
+      <tr>
+        <th>Spring Data JPA</th>
+        <th>Spring JDBC</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td><a href="Notes/spring/springdatajpa/1_introduction.md">Introduction</a></td>
+        <td><a href=""></a></td>
+        <td><a href=""></a></td>
+      </tr>
     </table>
   </div>
 </html>
+
+
+### VII. Spring Data JPA
+Spring Data JPA makes it easy to implement JPA-based repositories with minimal boilerplate code
+- [7.1. Introduction](Notes/spring/springdatajpa/1_introduction.md)
+- [7.2. Annotations](Notes/spring/springdatajpa/2_annotations.md)
+  - [`@Table` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-table-annotation-)
+  - [`@Column` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-column-annotation-)
+  - [`@Id` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-id-and-generatedvalue-annotation-)
+
+### IX. Spring JDBC
+Spring JDBC provides a simple template-based API for database interaction
+
+## gRPC (Remote Procedure Calls)
+- [Introduction](Notes/gRPC/grpc_introduction.md)
+- [Client/Server Setup]()
+
 
 [//]: # (- [2. Spring Controllers]&#40;&#41;)
 
