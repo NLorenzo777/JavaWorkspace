@@ -7,7 +7,7 @@ purpose of this repository is to easily access learning progress for review.
 ## Quick Links:
 
 ## HOW TOs:
-- [Configuring a Repository](Notes/how-tos/configuring-a-repository.md)
+- [Configuring a Springboot Repository](Notes/how-tos/configuring-a-repository.md)
 
 ## Java Fundamentals
 
@@ -162,25 +162,30 @@ purpose of this repository is to easily access learning progress for review.
         <td><a href=""></a></td>
         <td><a href=""></a></td>
       </tr>
+      <tr>
+        <td>
+          <div><a href="Notes/spring/springdatajpa/2_annotations.md">Annotations</a></div>
+          <div>
+            <ul>
+              <li><a href="Notes/spring/springdatajpa/2_annotations.md#the-table-annotation-">@Table</a></li>
+              <li><a href="Notes/spring/springdatajpa/2_annotations.md#the-column-annotation-">@Column</a></li>
+              <li><a href="Notes/spring/springdatajpa/2_annotations.md#the-id-and-generatedvalue-annotation-">@Id</a></li>
+            </ul>
+          </div>
+        </td>
+        <td><a href=""></a></td>
+        <td><a href=""></a></td>
+      </tr>
     </table>
   </div>
 </html>
-
-
-### VII. Spring Data JPA
-Spring Data JPA makes it easy to implement JPA-based repositories with minimal boilerplate code
-- [7.1. Introduction](Notes/spring/springdatajpa/1_introduction.md)
-- [7.2. Annotations](Notes/spring/springdatajpa/2_annotations.md)
-  - [`@Table` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-table-annotation-)
-  - [`@Column` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-column-annotation-)
-  - [`@Id` Annotation](Notes/spring/springdatajpa/2_annotations.md#the-id-and-generatedvalue-annotation-)
 
 ### IX. Spring JDBC
 Spring JDBC provides a simple template-based API for database interaction
 
 ## gRPC (Remote Procedure Calls)
 - [Introduction](Notes/gRPC/grpc_introduction.md)
-- [Client/Server Setup]()
+- [Client/Server Setup](Notes/gRPC/)
 
 
 [//]: # (- [2. Spring Controllers]&#40;&#41;)
