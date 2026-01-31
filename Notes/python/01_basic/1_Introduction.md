@@ -38,4 +38,7 @@ print(isinstance(languages, tuple)) # Output: True
 Mathematical operations in python is almost the same with Java except for the following:
 
 - **Exponents** are represented by `**`.
-- 
+
+
+## Python Errors
+
