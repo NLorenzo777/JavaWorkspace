@@ -5,6 +5,8 @@ Repository for learning Java continuously which contains some information on bas
 purpose of this repository is to easily access learning progress for review.
 
 ## Quick Links:
+- [Spring JDBC Samples](Notes/spring/springJDBC/1_Introduction.md#jdbc-template-queries)
+- [Some Important Annotations (@Data, @Entity, @Id, and Constructor Annotations)](Notes/spring/springboot/5_exception-handling.md#creating-a-jpa-entity-class)
 
 ## HOW TOs:
 - [Configuring a Springboot Repository](Notes/how-tos/configuring-a-repository.md)
