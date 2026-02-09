@@ -38,6 +38,7 @@ Spring framework provides the following approaches for JDBC database access.
 - It executes SQL queries or updates, initiating iteration over ResultSets and catching JDBC exceptions and translating them to the generic.
 - It executes core JDBC workflow, leaving application code to provide SQL and extract results.
 - It handles the exception and provides the informative exception messages with the help of exception classes defined in the **org.springframework.dao** package.
+- Simplifies database operations by managing JDBC resources such as Connection, Statement and ResultSet.
 
 #### Common Methods of spring JdbcTemplate class
 1. `public int update(String query)`: Used to insert, update and delete records.

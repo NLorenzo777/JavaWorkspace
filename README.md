@@ -10,6 +10,9 @@ purpose of this repository is to easily access learning progress for review.
 
 ## HOW TOs:
 - [Configuring a Springboot Repository](Notes/how-tos/configuring-a-repository.md)
+- [Creating a SQL Stored procedure](Notes/how-tos/sql-stored-procedure.md)
+- [Creating a PostgreSQL Database Cluster for local setup](Notes/how-tos/)
+- [Setting and Using of Application Properties](Notes/how-tos/setting-and-using-application-properties.md)
 
 ## Java Fundamentals
 
@@ -166,7 +169,17 @@ purpose of this repository is to easily access learning progress for review.
       </tr>
       <tr>
         <td><a href="Notes/spring/springdatajpa/2_annotations.md">Annotations</a></td>
+        <td><a href="Notes/spring/springJDBC/2_PreparedStatement.md">Prepared Statement JDBC Template</a></td>
         <td><a href=""></a></td>
+      </tr>
+      <tr>
+        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springJDBC/3_NamedParameter.md">NamedParameter JDBC Template</a></td>
+        <td><a href=""></a></td>
+      </tr>
+      <tr>
+        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springJDBC/3_NamedParameter.md">NamedParameter JDBC Template</a></td>
         <td><a href=""></a></td>
       </tr>
     </table>
