@@ -160,7 +160,7 @@ purpose of this repository is to easily access learning progress for review.
       <tr>
         <th>Spring Data JPA</th>
         <th>Spring JDBC</th>
-        <th></th>
+        <th>Spring ORM (Hibernate Integration)</th>
       </tr>
       <tr>
         <td><a href="Notes/spring/springdatajpa/1_introduction.md">Introduction</a></td>
@@ -179,7 +179,12 @@ purpose of this repository is to easily access learning progress for review.
       </tr>
       <tr>
         <td><a href=""></a></td>
-        <td><a href="Notes/spring/springJDBC/3_NamedParameter.md">NamedParameter JDBC Template</a></td>
+        <td><a href="Notes/spring/springJDBC/4_SQLScripts.md">SQL Scripts</a></td>
+        <td><a href=""></a></td>
+      </tr>
+      <tr>
+        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springJDBC/5_ResultSetExtractor.md">The ResultSetExtractor Interface</a></td>
         <td><a href=""></a></td>
       </tr>
     </table>

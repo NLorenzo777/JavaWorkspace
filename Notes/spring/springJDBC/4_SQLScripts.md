@@ -1,4 +1,4 @@
-# SQL Scripts with Spring JDBC + JPA + HSQLDB
+# SQL Scripts with Spring JDBC + JPA + HSQLDB [↑](../../../README.md#spring-framework)
 This section covers the execution of SQL scripts at application startup using Spring JDBC, JPA, and HSQLDB.
 
 - **JDBC:** API for connecting Java applications to databases.
