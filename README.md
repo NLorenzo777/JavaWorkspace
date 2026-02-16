@@ -165,7 +165,7 @@ purpose of this repository is to easily access learning progress for review.
       <tr>
         <td><a href="Notes/spring/springdatajpa/1_introduction.md">Introduction</a></td>
         <td><a href="Notes/spring/springJDBC/1_Introduction.md">Introduction</a></td>
-        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springORMHibernate/1_SpringHibernateConfiguration.md">Basic Configuration</a></td>
       </tr>
       <tr>
         <td><a href="Notes/spring/springdatajpa/2_annotations.md">Annotations</a></td>
