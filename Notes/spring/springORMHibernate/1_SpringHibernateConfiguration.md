@@ -1,4 +1,4 @@
-# Spring Hibernate Configuration
+# Spring Hibernate Configuration [↑](../../../README.md#spring-framework)
 Spring Boot and Hibernate together provide a powerful solution for developing scalable, database-driven applications.
 
 - Spring Boot reduces configuration effort

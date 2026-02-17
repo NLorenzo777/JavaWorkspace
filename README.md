@@ -170,7 +170,7 @@ purpose of this repository is to easily access learning progress for review.
       <tr>
         <td><a href="Notes/spring/springdatajpa/2_annotations.md">Annotations</a></td>
         <td><a href="Notes/spring/springJDBC/2_PreparedStatement.md">Prepared Statement JDBC Template</a></td>
-        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springORMHibernate/2_JPAvsHibernate.md">JPA vs Hibernate</a></td>
       </tr>
       <tr>
         <td><a href=""></a></td>
