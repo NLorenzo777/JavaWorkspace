@@ -175,7 +175,7 @@ purpose of this repository is to easily access learning progress for review.
       <tr>
         <td><a href=""></a></td>
         <td><a href="Notes/spring/springJDBC/3_NamedParameter.md">NamedParameter JDBC Template</a></td>
-        <td><a href=""></a></td>
+        <td><a href="Notes/spring/springORMHibernate/3_SpringORMExample.md">Spring ORM Hibernate Example</a></td>
       </tr>
       <tr>
         <td><a href=""></a></td>
