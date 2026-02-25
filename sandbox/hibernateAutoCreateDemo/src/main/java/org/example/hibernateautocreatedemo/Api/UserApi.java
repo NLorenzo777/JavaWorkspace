@@ -1,4 +1,4 @@
-package org.example.hibernateautocreatedemo.Entity.Api;
+package org.example.hibernateautocreatedemo.Api;
 
 import org.example.hibernateautocreatedemo.Entity.User;
 import org.example.hibernateautocreatedemo.Services.UserService;
