@@ -158,6 +158,11 @@ purpose of this repository is to easily access learning progress for review.
         <td></td>
       </tr>
       <tr>
+        <td><a href="Notes/spring/springboot/8_TransactionManagement.md">Transactions Management</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
         <th>Spring Data JPA</th>
         <th>Spring JDBC</th>
         <th>Spring ORM (Hibernate Integration)</th>
