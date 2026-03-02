@@ -185,7 +185,7 @@ purpose of this repository is to easily access learning progress for review.
       <tr>
         <td><a href=""></a></td>
         <td><a href="Notes/spring/springJDBC/4_SQLScripts.md">SQL Scripts</a></td>
-        <td><a href="Notes/spring/springORMHibernate/4_OneToOneMapping.md">One-to-One Mapping</a></td>
+        <td><a href="Notes/spring/springORMHibernate/4_Mappings.md">Mappings</a></td>
       </tr>
       <tr>
         <td><a href=""></a></td>
