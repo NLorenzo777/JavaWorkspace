@@ -18,7 +18,7 @@ with a way to navigate through the data in a controlled and efficient manner.
   - `setFirstResult()` specifies the first result to retrieve.
   - `setMaxResults()` specifies the maximum number of results to retrieve.
 
-### The `.seFirstResult(int firstResult)`
+### The `.setFirstResult(int firstResult)`
 - Used in HQL to set the index of the first record to retrieve in a query result set.
 - The method takes an integer value as a parameter representing the index of the first record to retrieve.
 - The index is zero-based, meaning that the first record has an index of 0.
