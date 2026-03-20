@@ -229,4 +229,6 @@ purpose of this repository is to easily access learning progress for review.
 
 ### Google Generative AI Leader
 - [I. Foundational Concepts](Notes/AI/Google-Gen-AI-Leader/1_Foundational-Concepts.md)
+- [II. Gen AI Landscape](Notes/AI/Google-Gen-AI-Leader/2_Gen-AI-Landscape.md)
+- [III. Introduction to Gen AI Applications](Notes/AI/Google-Gen-AI-Leader/3_Introduction-to-Gen-AI-Apps.md)
 
