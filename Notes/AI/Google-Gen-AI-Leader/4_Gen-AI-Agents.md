@@ -7,6 +7,9 @@
 4. [Prompt Engineering Techniques](#prompt-engineering-techniques-)
 5. [Types of Agent Tools](#types-of-agent-tools-)
 6. [Google's Agent Tooling](#googles-agent-tooling-)
+7. [RAG and Tooling](#rag-and-tooling-)
+8. [Search Agents](#search-agents-)
+9. [Gen AI for Customer Engagement](#gen-ai-for-customer-engagements-)
 
 
 
@@ -149,3 +152,75 @@ Below are some of the relevant **Google Cloud services** for agent tooling
 ### Reference
 - [Creating an AI API Key](99_Ref_Creating-API-Key.md)
 
+## RAG and Tooling [^](#Generative-ai-agents)
+- Before RAG, models could not directly learn from tool data.
+- They could use tools to fetch information, but lacked the ability to process and integrate data into their knowledge.
+- Their understanding was limited to their training data, and tool-retrieved data was used only for the immediate query, not for learning
+- RAG solves this by enabling models to retrieve and learn from data provided by tools.
+
+#### 1. Retrieval
+- **Data Stores**
+  - These can be internal databases or other sources of structured and unstructured data.
+- **Vector Databases:**
+  - Databases store embeddings (numerical representations) of text, allowing the LLM to find semantically similar information to the user's query.
+  - The LLM uses the user query to create an embedding and searches the vector database for matching documents or passages.
+- **Search engines:**
+  - The LLM can use search engines (via extensions or API) to find relevant web pages, articles, or other online content.
+- **Knowledge Graphs:**
+  - The LLM can query knowledge graphs to retrieve facts and relationships relevant to the user's query.
+
+#### 2. Augmentation
+The retrieved information is then incorporated (or "augmented") into the prompt that is fed to the LLM. This augmented prompt now contains both the user's original query and the relevant context retrieved from external sources.
+
+#### 3. Generation
+The LLM processes the augmented prompt and generates a response. Because the prompt includes relevant external information, the LLM can generate a more informed, accurate, and contextually appropriate response. It can also cite the sources of its information, increasing transparency and trustworthiness.
+
+### Iteration
+- In some RAG systems, the LLM might iterate on the retrieval process.
+- if the initial retrieval doesn't yield satisfactory results, the LLM might refine its query or use different retrieval tools to find more relevant information.
+- It could also ask clarifying questions of the user. 
+- This iterative process allows the LLM to continuously improve the quality and relevance of its responses.
+
+### Data Stores
+RAG allows LLM to access and process information beyond their training data, making them more accurate and relevant.
+
+1. **Websites**
+    - Access and process information directly from web pages, enabling the agent to stay up-to-date with current events or access publicly available information
+2. **Structured Data:**
+    - Connect to information organized in JSON format or tables such as product catalogs, customer DBs, internal knowledge bases.
+    - Vertex AI can automatically understand the structure of data or allow to define it.
+3. **Unstructured Data:**
+    - Utilize files in various formats such as HTML, PDF, and DOCX, making it possible for the agent to access information from a wide range of sources.
+
+## Search Agents [^](#Generative-ai-agents)
+
+### Vertex AI Search
+- Vertex AI Search offers both search and recommendation solutions.
+- Search allows to create a powerful search experience for public website.
+- It can index and search across a variety of data types, including structured data in BigQuery and unstructured documents in Google Cloud Storage.
+
+## Gen AI for Customer Engagements [^](#Generative-ai-agents)
+
+### Gemini Enterprise for CX
+- Provides an agentic solution designed to bring shopping and customer service together on a single intelligent interface.
+- The tools are built using Gemini Multimodal models, enabling agents to use complex reasoning to understand intent and execute multistep tasks.
+- All of this can be built on top of Google's `Contact Center as A Service (CCaaS)`. An enterprise-grade contact center solution that is native to the cloud.
+  - CCaaS manages infrastructure, integrates with CRMs, and offers omnichannel support.
+  - handles simultaneous multichannel communication, channel switching, multimodal interactions, agent routing, freeing businesses to focus on customer experiences.
+
+#### 1. Customer Experience Agents
+- Acts as an effective chatbots communicating with customers.
+- `Customer Experience Agent Studio` allows to create powerful CX agents.
+- This hybrid approach allows you to build agents that don’t just talk—they take action, such as processing a refund or scheduling a delivery.
+- **Deterministic**, **Generative**, **Hybrid**
+
+#### 2. Agent Assist
+- Support live human contact center agents
+- Supports live human agents with in-the-moment assistance, generated responses, and real-time coaching to help resolve customer issues faster and with greater accuracy.
+- Leveraging Gemini multimodal models, this can recommend agent responses to customers, suggest appropriate knowledge base content to solve a customer's issue, transcribe or translate calls in real time, and summarize conversation.
+
+
+#### 3. Customer Experience Insights
+- Gain insights into all communications with customers (through chatbot agents or human agents)
+- Analyzes conversational data from across the customer journey to provide contact center leaders and managers with the data-driven insights to boost efficiency.
+- Automatically identifies interesting customer interactions in need of further review and automatically score interactions using conditional scorecards.
