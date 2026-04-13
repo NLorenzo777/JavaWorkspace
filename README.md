@@ -233,3 +233,8 @@ purpose of this repository is to easily access learning progress for review.
 - [III. Introduction to Gen AI Applications](Notes/AI/Google-Gen-AI-Leader/3_Introduction-to-Gen-AI-Apps.md)
 - [IV. Generative AI Agents](Notes/AI/Google-Gen-AI-Leader/4_Gen-AI-Agents.md)
 
+## Mainframe Learning
+
+### IBM Apptio Sales Foundation
+- [I. IBM Apptio Level 1 (ITFM)](Notes/mainframe/1_IBM-Apptio-Sales-Foundation/1_ITFM-Level-1.md)
+- [II. IBM Apptio Level 2](Notes/mainframe/2_Apptio-Level-2/2_Apptio-Level-2.md)
