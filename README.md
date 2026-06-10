@@ -221,6 +221,11 @@ purpose of this repository is to easily access learning progress for review.
   </div>
 </html>
 
+## System Designs
+
+### Apache Kafka
+- [Kafka Basics](Notes/system-designs/kafka/kafka_summary.md)
+
 ## gRPC (Remote Procedure Calls)
 - [Introduction](Notes/gRPC/grpc_introduction.md)
 - [Client/Server Setup](Notes/gRPC/)
