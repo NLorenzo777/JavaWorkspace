@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: simple-order-processor
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/Postgres"
+    username: "postgres"
+    password: "postgres"
+    driver-class-name: "org.hibernate.dialect.PostgreSQLDialect"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 4200

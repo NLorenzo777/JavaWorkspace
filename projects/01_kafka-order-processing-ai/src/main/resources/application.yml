@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: kafka-order-processing
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    # Producer configuration
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+      acks: all                  # Wait for all replicas to acknowledge
+      retries: 3
+      batch-size: 16384
+      linger-ms: 1
+      buffer-memory: 33554432
+
+    # Consumer configuration
+    consumer:
+      group-id: order-processing-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.example.orderprocessing.model"
+      enable-auto-commit: false  # Manual acknowledgment for reliability
+
+    # Listener configuration
+    listener:
+      ack-mode: MANUAL_IMMEDIATE  # Acknowledge only after successful processing
+      concurrency: 3              # 3 concurrent listener threads
+
+# Kafka topic names (custom properties)
+kafka:
+  topics:
+    orders: orders
+    order-confirmed: order-confirmed
+    order-shipped: order-shipped
+    order-delivered: order-delivered
+    order-cancelled: order-cancelled
+    dead-letter: orders-dead-letter
+  consumer:
+    group-id: order-processing-group
+
+# Logging
+logging:
+  level:
+    com.example.orderprocessing: DEBUG
+    org.springframework.kafka: INFO
+    org.apache.kafka: WARN
