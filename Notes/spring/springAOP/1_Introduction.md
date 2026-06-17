@@ -32,6 +32,34 @@ A specific point in the execution of the program, such as method execution or ex
 ### 4. Pointcut
 A Pointcut is a predicate that defines where advice should be applied. It matches join points using expressions.
 
+```java
+@PointCut("execution(* com.example.service.ServiceExample.*(..))");
+public void servicePointCut() {} //empty method. Method body is unreachable
+```
+- `execution`: Matches execution join points.
+- `*`: Means all return type (void, String, int, etc.)
+- `com.example.service.ServiceExample`: Class path. Targets the ServiceExample specific class
+- `*`: Method name. Matches any method in the selected class
+- `(..)`: Parameters. Matches any number of any type of parameters.
+
+#### Common PointCut Expression variants
+```text
+// Only methods with no parameters
+"execution(* com.example.service.ServiceExample.*())"
+
+// Only methods returning String
+"execution(String com.example.service.ServiceExample.*(..))"
+
+// All classes in a package (note the ..)
+"execution(* com.example.service..*.*(..))"
+
+// Methods starting with "get"
+"execution(* com.example.service.ServiceExample.get*(..))"
+
+// Specific method with specific param type
+"execution(* com.example.service.ServiceExample.findUser(Long))"
+```
+
 ### 5. Weaving
 Process of linking aspects with the target object. Spring AOP only supports runtime weaving using proxy-based mechanisms.
 It does not modify bytecode like AspectJ.
