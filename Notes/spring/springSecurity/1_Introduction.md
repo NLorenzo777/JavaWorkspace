@@ -33,3 +33,4 @@ Secure specific methods in the application using annotations:
 - Active open-source community ensuring continuous improvements.
 
 -----------
+`NEXT TOPIC:`[Important Terms in Spring Security](2_Important-terms.md)

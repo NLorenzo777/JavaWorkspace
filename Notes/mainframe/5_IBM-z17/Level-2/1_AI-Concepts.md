@@ -24,3 +24,7 @@
 - Combines features of both **encoder** and **decoder** models.
 - Can perform many of the **generative tasks** that decoder-only models can, but their **compact size** makes them **faster** and **cheaper** to tune and serve.
 - **Model Examples:** `BART`, `T5`, `Flan-T5`
+
+## Multiple-Model AI
+- Refers to the technique of combining traditional ML or DL models with AI models to achieve improved business outcomes.
+- Multiple-model AI architectures are helping define and shape the enterprise.
